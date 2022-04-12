@@ -12,13 +12,6 @@ namespace ClothesWeb.Models
     using System;
     using System.Collections.Generic;
 
-    public class ProductDTO
-    {
-        public string idProduct { get; set; }
-        public string nameProduct { get; set; }
-        public double price { get; set; }
-        public string URLImage { get; set; }
-    }
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -36,8 +29,6 @@ namespace ClothesWeb.Models
         public int sizeXL { get; set; }
         public double price { get; set; }
         public bool isNew { get; set; }
-
-        public string URLImage { get; set; }
     
         public virtual Collection Collection { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

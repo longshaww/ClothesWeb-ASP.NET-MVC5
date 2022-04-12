@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -18,18 +19,8 @@ namespace ClothesWeb.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            //var products = db.Product.Include(p => p.Collection);
-                var query =
-                from product in db.Product
-                join image in db.ImageProduct on product.idProduct equals image.idProduct
-                select new ProductDTO
-                {
-                    idProduct = product.idProduct,
-                    nameProduct = product.nameProduct,
-                    price = product.price,
-                    URLImage = image.URLImage,
-                };
-            return View(query.ToList());
+            var products = db.Product.Include(p => p.ImageProduct);
+            return View(products.ToList());
         }
 
         // GET: Products/Details/5
