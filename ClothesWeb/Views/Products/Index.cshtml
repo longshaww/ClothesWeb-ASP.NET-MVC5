@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ClothesWeb.Models.ProductDTO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<div class="row row-cols-3 row-cols-md-2 row-cols-sm-1">
+    @foreach (var item in Model)
+    {
+        <div class="card col m-2 border-0" style="width: 18rem;">
+            <img src=@item.URLImage class="card-img-top">
+            <div class="card-body text-center">
+                <h5 class="card-title">@item.nameProduct</h5>
+                <p class="card-text">@item.price</p>
+                <a href="/Products/Details/@item.idProduct" class="stretched-link"></a>
+            </div>
+        </div>
+    }
+</div>
