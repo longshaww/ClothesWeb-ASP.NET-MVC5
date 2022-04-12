@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ClothesWeb.Models.ProductDTO>
+﻿@model IEnumerable<ClothesWeb.Models.Product>
 
 @{
     ViewBag.Title = "Index";
@@ -12,16 +12,20 @@
 </p>
 
 
-<div class="row row-cols-3 row-cols-md-2 row-cols-sm-1">
+<div class="row row-cols-3">
     @foreach (var item in Model)
     {
-        <div class="card col m-2 border-0" style="width: 18rem;">
-            <img src=@item.URLImage class="card-img-top">
+    <div class="col">
+        <div class="card m-2 border-0" style="width: 18rem;">
+            <img src=@item.ImageProduct.First().URLImage class="card-img-top">
             <div class="card-body text-center">
                 <h5 class="card-title">@item.nameProduct</h5>
-                <p class="card-text">@item.price</p>
+                <p class="card-text">@item.price,000đ</p>
                 <a href="/Products/Details/@item.idProduct" class="stretched-link"></a>
             </div>
         </div>
+    </div>
     }
 </div>
+
+
