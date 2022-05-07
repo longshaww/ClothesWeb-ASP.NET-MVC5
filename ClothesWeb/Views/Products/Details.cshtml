@@ -40,7 +40,7 @@
                     <button class="btn btn-dark btn-cart d-block mb-3" onclick="window.location.href='/Cart/AddtoCart/@Model.idProduct'" type="submit" form="sizeForm">
                         Thêm vào giỏ hàng
                     </button>
-                    <button class="btn btn-dark btn-cart d-block mb-3">
+                    <button class="btn btn-dark btn-cart d-block mb-3" onclick="window.location.href='/Payment'">
                         Thanh toán
                     </button>
                 </div>
@@ -68,3 +68,4 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.idProduct }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+

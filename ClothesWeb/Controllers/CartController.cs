@@ -38,7 +38,7 @@ namespace ClothesWeb.Controllers
         {
             if (Session["Cart"] == null)
             {
-                return RedirectToAction("ShowToCart", "Cart");
+                return RedirectToAction("Index", "Products");
             }
             Cart cart = Session["Cart"] as Cart;
             return View(cart);
@@ -74,7 +74,7 @@ namespace ClothesWeb.Controllers
         {
             if (Session["Cart"] == null)
             {
-                return RedirectToAction("ShowToCart", "Cart");
+                return RedirectToAction("Index", "Products");
             }
             Cart cart = Session["Cart"] as Cart;
             return View(cart);
@@ -88,7 +88,6 @@ namespace ClothesWeb.Controllers
             totalItem = cart.CartCount();
             ViewBag.QtyCart = totalItem;
             return PartialView("BagCart");
-            
         }
     }
 }
