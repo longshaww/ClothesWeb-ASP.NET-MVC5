@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -15,16 +14,16 @@
 <div class="row row-cols-3">
     @foreach (var item in Model)
     {
-    <div class="col">
-        <div class="card m-2 border-0" style="width: 18rem;">
-            <img src=@item.ImageProduct.First().URLImage class="card-img-top">
-            <div class="card-body text-center">
-                <h5 class="card-title">@item.nameProduct</h5>
-                <p class="card-text">@item.price,000đ</p>
-                <a href="/Products/Details/@item.idProduct" class="stretched-link"></a>
+        <div class="col">
+            <div class="card m-2 border-0" style="width: 18rem;">
+                <img src=@item.ImageProduct.First().URLImage class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@item.nameProduct</h5>
+                    <p class="card-text">@item.price,000đ</p>
+                    <a href="/Products/Details/@item.idProduct" class="stretched-link"></a>
+                </div>
             </div>
         </div>
-    </div>
     }
 </div>
 

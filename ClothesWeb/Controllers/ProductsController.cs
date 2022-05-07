@@ -17,8 +17,16 @@ namespace ClothesWeb.Controllers
         private highclubEntities db = new highclubEntities();
 
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(String nameProduct,String idCollection)
         {
+            if (nameProduct != null)
+            {
+              return View(db.Product.Where(s => s.nameProduct.Contains(nameProduct)).Include(s => s.ImageProduct).ToList());
+            }
+            if(idCollection != null)
+            {
+                return View(db.Product.Where(s => s.idCollection.Equals(idCollection)).Include(s => s.ImageProduct).ToList());
+            }
             var products = db.Product.Include(p => p.ImageProduct);
             return View(products.ToList());
         }

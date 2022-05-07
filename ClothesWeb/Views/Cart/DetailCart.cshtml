@@ -1,0 +1,161 @@
+﻿@model ClothesWeb.Models.Cart
+
+@{
+    ViewBag.Title = "DetailCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="text-center mb-4">
+        <h2>Giỏ hàng của bạn</h2>
+        <p class="m-0">
+            Có @Model.CartCount().ToString() sản phẩm trong giỏ hàng
+        </p>
+        <div>___________________________</div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        double total = Convert.ToDouble(item._shopping_product.price * item._shopping_qty);
+                        <tr key={index}>
+                            <td class="cart-product-img">
+                                <img src="@Url.Content(item._shopping_product.ImageProduct.First().URLImage)"
+                                     class="border" style="width:10rem" />
+                            </td>
+                            <td class="cart-product-content position-relative">
+                                <p class="cart-name-size">
+                                    <a href="#"
+                                       class="d-block">
+                                        @Html.DisplayFor(model => item._shopping_product.nameProduct)
+                                    </a>
+                                    <span>
+                                        @Html.DisplayFor(model => item._shopping_size)
+                                    </span>
+                                </p>
+                                <div class="d-flex justify-content-between cart-price-qty">
+                                    <span class="cart-qty">
+                                        @Html.DisplayFor(model => item._shopping_qty)
+                                    </span>
+                                    <div class="fw-bold">
+                                        @total,000đ
+                                    </div>
+                                </div>
+                                <form action="/Cart/DeleteCartItem/@item._shopping_product.idProduct" method="post">
+                                    <input type="hidden" name="detail" />
+                                    <button class="btn btn-dark position-absolute top-0 end-0" onclick="window.location.href='/Cart/DeleteCartItem/@item._shopping_product.idProduct'">X</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-5">
+                    <h5>Ghi chú đơn hàng</h5>
+                    <div class="form-floating">
+                        <textarea class="form-control"
+                                  placeholder="Ghi chú"
+                                  id="note-text-area"></textarea>
+                        <label for="note-text-area">
+                            Ghi chú
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>Chính sách mua hàng</h5>
+                    <ul class="list-privacy">
+                        <li>
+                            Khách hàng có thể đổi size sản
+                            phẩm trong vòng 3 NGÀY kể từ
+                            lúc nhận được sản phẩm. Phí
+                            ship 2 chiều để đổi size là
+                            60k (chỉ đổi 01 lần duy nhất).
+                        </li>
+                        <li>
+                            Đối với sản phẩm bị lỗi ( Đứt
+                            nút, vấy bẩn, lỗi sản
+                            xuất,...) bạn vui lòng chụp
+                            lại phần lỗi và gửi cho Team
+                            mình check lại và tiến hành
+                            đổi sản phẩm mới cho bạn hen
+                            🥰 - Chi phí đổi sản phẩm sẽ
+                            do Team mình thanh toán ạ.
+                        </li>
+                        <li>
+                            Chỉ đổi size trong trường hợp
+                            sản phẩm còn size/ hàng. Không
+                            nhận trả sản phẩm/hoàn
+                            tiền/đổi sang sản phẩm khác.
+                        </li>
+                        <li>
+                            Các sản phẩm mua trong dịp
+                            Sale không hổ trợ đổi size,
+                            đổi mẫu. Chỉ đổi nếu có lỗi từ
+                            phía nhà sản xuất.
+                        </li>
+                        <li>
+                            Chỉ đổi trả sản phẩm còn
+                            bill,còn tag.
+                        </li>
+                        <li>
+                            Đơn hàng trên 1 triệu, vui
+                            lòng chuyển khoản trước 50%
+                            qua số tài khoản: 📷
+                            Techcombank 19036662605013 Chủ
+                            tài khoản TRẦN NHƯ HẢO Chi
+                            Nhánh Văn Thánh ——-——— Thông
+                            tin chuyển khoản : tên bạn +
+                            sđt (+ mã đơn HC... ) Sau khi
+                            nhận được chuyển khoản
+                            HIGHCLUB sẽ tiến hành gọi xác
+                            nhận và làm đơn. Xin cảm ơn !
+                            Trong thời điểm hiện tại do
+                            ảnh hưởng của Covid-19, thời
+                            gian giao hàng có thể thay đổi
+                            khiến bạn nhận được hàng lâu
+                            hơn so với thời gian dự kiến.
+                            Rất mong quý khách hàng thông
+                            cảm
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="right-card p-3 border rounded shadow">
+                <h4 class="border-bottom py-2">
+                    Thông tin đơn hàng
+                </h4>
+                <p class="py-2 border-bottom fw-bold">
+                    Tổng tiền:
+                    <span class="float-end text-danger">
+                        @Model.TotalMoney(),000đ
+                    </span>
+                </p>
+                <p>
+                    Phí vận chuyển sẽ được tính ở trang
+                    thanh toán. Bạn cũng có thể nhập mã giảm
+                    giá ở trang thanh toán.
+                </p>
+                <div class="text-center">
+                    <button class="btn btn-danger button-card mb-2">
+                        Thanh toán
+                    </button>
+                </div>
+                <p class="text-center">
+                    <a href="/Products"
+                       class="text-dark text-center">
+
+                        Tiếp tục mua hàng
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="@Url.Action("Index","Products")">Continue Shopping</a>
+

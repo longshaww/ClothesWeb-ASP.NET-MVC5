@@ -1,0 +1,72 @@
+﻿@model ClothesWeb.Models.Cart
+
+@{
+    ViewBag.Title = "ShowToCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>ShowToCart</h2>
+
+@if (Model != null)
+{
+    <table class="table align-middle">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                @*<th>Size</th>*@
+                <th>Image</th>
+                <th>Quantity</th>
+                <th>Size</th>
+                <th>Sum</th>
+                <th>Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                double total = Convert.ToDouble(item._shopping_product.price * item._shopping_qty);
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_product.nameProduct)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_product.price)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(model=> item._shopping_product.size)*@
+                        <img src="@Url.Content(item._shopping_product.ImageProduct.First().URLImage)" style="width:10rem" />
+                    </td>
+                    <td>
+                        @using (@Html.BeginForm("UpdateQtyCart", "Cart"))
+                        {
+                            <input type="hidden" value="@item._shopping_product.idProduct" name="ID_Product" />
+                            <div class="d-flex">
+                                <input type="number" value="@item._shopping_qty" class="form-control w-25" name="Qty" />
+                                <input type="submit" value="Update" class="ms-3 btn btn-dark" />
+                            </div>
+                        }
+                    </td>
+                    <td>@Html.DisplayFor(model => item._shopping_size)</td>
+                    <td>
+                        Total: @total
+                    </td>
+                    <td>
+                        <form action="/Cart/DeleteCartItem/@item._shopping_product.idProduct" method="post">
+                            <button class="btn btn-dark" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center fw-bold">Sum Total: @Model.TotalMoney(),000đ</td>
+            </tr>
+        </tfoot>
+    </table>
+    <a href="@Url.Action("Index","Products")">Continue Shopping</a>
+    <a href="@Url.Action("DetailCart","Cart")">Detail cart and policy</a>
+
+}

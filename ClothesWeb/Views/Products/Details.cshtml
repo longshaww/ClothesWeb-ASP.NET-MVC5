@@ -5,80 +5,62 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
 <div>
     <hr />
 
-        <div class="container">
-            <div class="row row-cols-1 row-cols-lg-2">
-                <div class="col">
-                    <img src=@Html.DisplayFor(model=>model.ImageProduct.First().URLImage)
-                         alt=""
-                         class="img-fluid"/>
-                    <div class="gallery d-flex">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col">
+                <img src=@Html.DisplayFor(model=>model.ImageProduct.First().URLImage)
+                     alt=""
+                     class="img-fluid" />
+                <div class="gallery d-flex">
 
-                    </div>
                 </div>
-                <div class="col">
-                    <h4>
-                        @Html.DisplayFor(model => model.nameProduct)
-                    </h4>
-                    <h6 class="mb-3">
-                        @Html.DisplayFor(model => model.price),000đ
-                    </h6>
-                    <div class="d-flex mb-4">
-               
+            </div>
+            <div class="col">
+                <h4>
+                    @Html.DisplayFor(model => model.nameProduct)
+                </h4>
+                <h6 class="mb-3">
+                    @Html.DisplayFor(model => model.price),000đ
+                </h6>
+                <div class="d-flex mb-4">
+                    <form action="/Cart/AddtoCart/@Model.idProduct" method="POST" id="sizeForm">
                         <div id="radio-list"
                              class="me-3">
-                            <input type="radio" id="sizeM" name="sizeM" value="sizeM">
-                            <label for="sizeM">
-                                M
-                            </label>
-                            <input type="radio" id="sizeL" name="sizeL" value="sizeL">
-                            <label for="sizeL">
-                                L
-                            </label>
-                            <input type="radio" id="sizeXL" name="sizeXL" value="sizeXL">
-                            <label for="sizeM">
-                                XL
-                            </label>
+                            M @Html.RadioButton("Size", "sizeM", true)
+                            L @Html.RadioButton("Size", "sizeL")
+                            XL @Html.RadioButton("Size", "sizeXL")
                         </div>
-                    </div>
-                    <div class="d-inline-flex shadow rounded quantity mb-4">
-                        <button  class="btn btn-light">-
-                        </button>
-                        <input class="form-control border-0 text-center"/>
-                        <button
-                                class="btn btn-light">+
-                        </button>
-                    </div>
-                    <div class="wrap-btn">
-                        <button
-                                class="btn btn-dark btn-cart d-block mb-3">
-                            Thêm vào giỏ hàng
-                        </button>
-                        <button class="btn btn-dark btn-cart d-block mb-3">
-                            Thanh toán
-                        </button>
-                    </div>
-                    <div class="product-description">
-                        <p class="fs-6 fw-bold text-decoration-underline pb-3 border-bottom">
-                            Mô tả sản phẩm
-                        </p>
-                        <p class="fs-6 pb-3 border-bottom">
-                            CHINH SÁCH GIAO HÀNG & ĐỔI TRẢ
-                            HÀNG
-                        </p>
-                    </div>
+                    </form>
+                </div>
+                <div class="wrap-btn">
+                    <button class="btn btn-dark btn-cart d-block mb-3" onclick="window.location.href='/Cart/AddtoCart/@Model.idProduct'" type="submit" form="sizeForm">
+                        Thêm vào giỏ hàng
+                    </button>
+                    <button class="btn btn-dark btn-cart d-block mb-3">
+                        Thanh toán
+                    </button>
+                </div>
+                <div class="product-description">
+                    <p class="fs-6 fw-bold text-decoration-underline pb-3 border-bottom">
+                        Mô tả sản phẩm
+                    </p>
+                    <p class="fs-6 pb-3 border-bottom">
+                        CHINH SÁCH GIAO HÀNG & ĐỔI TRẢ
+                        HÀNG
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <h4 class=" pb-3 border-bottom text-center">
-                SẢN PHẨM LIÊN QUAN
-            </h4>
-        </div>
+    </div>
+    <div class="container">
+        <h4 class=" pb-3 border-bottom text-center">
+            SẢN PHẨM LIÊN QUAN
+        </h4>
+    </div>
 
 
 </div>
