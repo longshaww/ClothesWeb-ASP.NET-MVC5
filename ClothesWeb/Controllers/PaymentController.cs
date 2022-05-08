@@ -36,10 +36,10 @@ namespace ClothesWeb.Controllers
         {
             try { 
             Cart cart = Session["Cart"] as Cart;
-            //if (form["cusName"] == "" || form["cusPhone"] == "" || form["cusAddress"] == "" || form["cusEmail"] == "")
-            //{
-            //    return (RedirectToAction("Index", new { error = "Vui lòng nhập đầy đủ thông tin" }));
-            //}
+            if (form["cusName"] == "" || form["cusPhone"] == "" || form["cusAddress"] == "" || form["cusEmail"] == "")
+            {
+                return (RedirectToAction("Index", new { error = "Vui lòng nhập đầy đủ thông tin" }));
+            }
 
             Guid cusId = Guid.NewGuid();
             Customer customer = new Customer();
@@ -71,6 +71,7 @@ namespace ClothesWeb.Controllers
                 detailBill.idProduct = item._shopping_product.idProduct;
                 detailBill.qty = item._shopping_qty;
                 detailBill.ProductTotal = item._shopping_product.price * item._shopping_qty;
+                detailBill.Size = item._shopping_size;
                 db.DetailBIll.Add(detailBill);
             }
             db.SaveChanges();

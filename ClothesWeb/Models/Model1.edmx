@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="highclubModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="highclubModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bill">
           <Key>
             <PropertyRef Name="idBill" />
@@ -46,7 +46,7 @@
           <Property Name="idBill" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="qty" Type="int" Nullable="false" />
           <Property Name="ProductTotal" Type="float" Nullable="false" />
-          <Property Name="size" Type="nvarchar" MaxLength="255" />
+          <Property Name="Size" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="ImageProduct">
           <Key>
@@ -224,7 +224,8 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="highclubModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -274,6 +275,7 @@
           <Property Name="idBill" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="qty" Type="Int32" Nullable="false" />
           <Property Name="ProductTotal" Type="Double" Nullable="false" />
+          <Property Name="Size" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Bill" Relationship="Self.FK__DetailBIl__idBil__3A81B327" FromRole="DetailBIll" ToRole="Bill" />
           <NavigationProperty Name="Product" Relationship="Self.FK__DetailBIl__idPro__35BCFE0A" FromRole="DetailBIll" ToRole="Product" />
         </EntityType>
@@ -508,6 +510,7 @@
                 <ScalarProperty Name="idBill" ColumnName="idBill" />
                 <ScalarProperty Name="qty" ColumnName="qty" />
                 <ScalarProperty Name="ProductTotal" ColumnName="ProductTotal" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

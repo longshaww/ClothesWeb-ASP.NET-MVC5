@@ -19,6 +19,7 @@ namespace ClothesWeb.Models
         public string idBill { get; set; }
         public int qty { get; set; }
         public double ProductTotal { get; set; }
+        public string Size { get; set; }
     
         public virtual Bill Bill { get; set; }
         public virtual Product Product { get; set; }

@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6bfd26e6b2d84be182003e46a9010f7c" Name="Diagram1">
-        <EntityTypeShape EntityType="highclubModel.Bill" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.Collection" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.Customer" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+      <Diagram DiagramId="13a379bce0624bdbbd9a8dab6b075c15" Name="Diagram1">
+        <EntityTypeShape EntityType="highclubModel.Bill" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="highclubModel.Collection" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="highclubModel.Customer" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="highclubModel.DetailBIll" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.ImageProduct" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.Permission" Width="1.5" PointX="1.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="highclubModel.ImageProduct" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="highclubModel.Permission" Width="1.5" PointX="1.5" PointY="15.375" IsExpanded="true" />
         <EntityTypeShape EntityType="highclubModel.Product" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.User" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="highclubModel.User" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="highclubModel.Voucher" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="highclubModel.FK__Bill__idCustomer__398D8EEE" ManuallyRouted="false" />
         <AssociationConnector Association="highclubModel.FK__Bill__idUser__37A5467C" ManuallyRouted="false" />
