@@ -15,8 +15,6 @@ namespace ClothesWeb.Models
     
     public partial class highclubEntities : DbContext
     {
-        internal object product;
-
         public highclubEntities()
             : base("name=highclubEntities")
         {

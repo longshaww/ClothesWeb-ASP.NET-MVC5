@@ -60,5 +60,10 @@ namespace ClothesWeb.Models
         {
             return items.Sum(s=>s._shopping_qty);
         }
+
+        public void ClearCart()
+        {
+            items.Clear();
+        }
     }
 }

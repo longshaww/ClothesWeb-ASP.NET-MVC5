@@ -15,8 +15,7 @@ namespace ClothesWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-
-    public partial class User: IValidatableObject
+    public partial class User : IValidatableObject
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
@@ -38,7 +37,6 @@ namespace ClothesWeb.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bill { get; set; }
         public virtual Permission Permission { get; set; }
-
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             highclubEntities db = new highclubEntities();
@@ -71,7 +69,5 @@ namespace ClothesWeb.Models
             public string email { get; set; }
             public int phone { get; set; }
         }
-
     }
 }
-
