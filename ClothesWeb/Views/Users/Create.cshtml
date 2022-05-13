@@ -22,7 +22,8 @@
                 @Html.ValidationMessageFor(model => model.idUser, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        @if (Request.Cookies["admin"] != null)
+        {
         <div class="form-group">
             @Html.LabelFor(model => model.idPermission, "idPermission", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -30,7 +31,7 @@
                 @Html.ValidationMessageFor(model => model.idPermission, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        }
         <div class="form-group">
             @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

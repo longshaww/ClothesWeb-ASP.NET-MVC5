@@ -17,9 +17,22 @@ namespace ClothesWeb.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            var user = db.User.Include(u => u.Permission);
-            return View(user.ToList());
+            var adminCookie = Request.Cookies["admin"];
+            var userCookie = Request.Cookies["user"];
+            if (adminCookie == null && userCookie !=null) {
+                var user = db.User.Where(s => s.username == userCookie.Value).FirstOrDefault();
+                ViewBag.user = user;
+            }
+            if(adminCookie != null && userCookie != null)
+            {
+                var userAdmin = db.User.Where(s => s.username == adminCookie.Value).FirstOrDefault();
+                ViewBag.user = userAdmin;
+            }
+            var users = db.User.Include(u => u.Permission);
+            return View(users.ToList());
         }
+
+
 
         // GET: Users/Details/5
         public ActionResult Details(string id)
@@ -50,6 +63,10 @@ namespace ClothesWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idUser,idPermission,username,password,gender,identityCard,address,email,URLAvatar,phone")] User user)
         {
+            if (user.idPermission == null)
+            {
+                user.idPermission = "P2";
+            }
             if (ModelState.IsValid)
             {
                 db.User.Add(user);

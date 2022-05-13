@@ -16,8 +16,11 @@ namespace ClothesWeb.Controllers
         {
             if (Request.Cookies["user"] != null)
             {
-                return RedirectToAction("Index", "Products");
+                return RedirectToAction("Index", "Users");
+
             }
+             RedirectToAction("Index", "Products");
+
             if (errorUsername != null )
                 {
                     ViewBag.error = errorUsername;
@@ -56,6 +59,10 @@ namespace ClothesWeb.Controllers
 
             if (user.idPermission == getPermssion.idPermission)
             {
+                HttpCookie adminCookie = new HttpCookie("admin");
+                adminCookie.Value = usernameForm;
+                adminCookie.Expires = DateTime.Now.AddDays(1);
+                Response.Cookies.Add(adminCookie);
                 return RedirectToAction("Index", "Users");
             }
             return RedirectToAction("Index", "Products");
@@ -63,7 +70,6 @@ namespace ClothesWeb.Controllers
 
 
 
-        [HttpPost]
         public ActionResult Signout()
         {
             if (Request.Cookies["user"] != null)
@@ -72,6 +78,14 @@ namespace ClothesWeb.Controllers
 
                 user.Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies.Add(user);
+            }
+
+            if(Request.Cookies["admin"] != null)
+            {
+                HttpCookie admin = Request.Cookies["admin"];
+
+                admin.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(admin);
             }
 
             return Redirect("/Products");

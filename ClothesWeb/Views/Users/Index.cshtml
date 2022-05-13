@@ -4,79 +4,155 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{ var user = ViewBag.user;}
 
-<h2>Index</h2>
+@if (user != null)
+{
+    <div class="text-center mt-5">
+        <div class="mb-3">
+            <img src="@Url.Content(user.URLAvatar)" class="rounded-circle border border-dark" style="width:12.5rem;height:12.5rem" />
+        </div>
+        <button class="btn btn-dark" onclick="window.location.href='/Users/Edit/@user.idUser'">Edit</button>
+            <button class="btn btn-dark" onclick="window.location.href='/Login/Signout'">Logout</button>
+        <div class="row mt-5">
+            <div class="col-4">
+                <ul class="list-group col fw-bold">
+                    <li class="list-group-item list-group-item-danger ">
+                        Tên
+                    </li>
+                    <li class="list-group-item">
+                        Giới tính
+                    </li>
+                    <li class="list-group-item">
+                        CMND
+                    </li>
+                    <li class="list-group-item">
+                        Địa chỉ
+                    </li>
+                    <li class="list-group-item">
+                        Email
+                    </li>
+                    <li class="list-group-item">
+                        SĐT
+                    </li>
+                </ul>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.gender)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.identityCard)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.URLAvatar)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Permission.namePermission)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.gender)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.identityCard)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.URLAvatar)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Permission.namePermission)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idUser }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idUser }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idUser })
-        </td>
-    </tr>
+            </div>
+            <ul class="list-group col">
+                <li class="list-group-item list-group-item-danger ">
+                    @user.username
+                </li>
+                @if (@user.gender)
+                {
+                    <li class="list-group-item">
+                        Nam
+                    </li>
+                }
+                else
+                {
+                    <li class="list-group-item">
+                        Nữ
+                    </li>
+                }
+                <li class="list-group-item">
+                    @user.identityCard
+                </li>
+                <li class="list-group-item">
+                    @user.address
+                </li>
+                <li class="list-group-item">
+                    @user.email
+                </li>
+                <li class="list-group-item">
+                    @user.phone
+                </li>
+            </ul>
+        </div>
+    </div>
 }
 
-</table>
+
+@if (Request.Cookies["admin"] != null)
+{
+    <h2>Users</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.identityCard)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.URLAvatar)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Permission.namePermission)
+                </th>
+                <th>Options</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.identityCard)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.URLAvatar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Permission.namePermission)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.idUser }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.idUser }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.idUser })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="text-center mt-3">
+        <button class="btn btn-dark" onclick="window.location.href='/Login/Signout'">Log out</button>
+    </div>
+}
