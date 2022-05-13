@@ -39,9 +39,13 @@
                     <input class="form-control me-2" name="nameProduct" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                    <img src="@Url.Content("~/Content/Images/shopping_cart.png")">
-                    @Html.Action("BagCart", "Cart")
-    
+                <img src="@Url.Content("~/Content/Images/shopping_cart.png")">
+                @Html.Action("BagCart", "Cart")
+                <form action="/login/signout" method="post">
+                    <input type="image" src="@Url.Content("~/Content/Images/account.png")">
+                </form>
+
+
             </div>
         </div>
     </nav>

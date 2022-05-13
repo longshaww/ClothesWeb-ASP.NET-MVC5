@@ -52,21 +52,10 @@ namespace ClothesWeb.Models
         }
 
         [Serializable]
-        public class UserLogin
-        {
-            public string UserName { set; get; }
-            public string GroupID { set; get; }
-            public string fullName { get; set; }
-            public string email { get; set; }
-            public int phone { get; set; }
-
-
-        }
         public class getUserDTO
         {
-            public string fullName { get; set; }
-            public string email { get; set; }
-            public int phone { get; set; }
+            public string UserGroupID { get; set; }
+            public string UserGroupName { get; set; }
         }
     }
 }
