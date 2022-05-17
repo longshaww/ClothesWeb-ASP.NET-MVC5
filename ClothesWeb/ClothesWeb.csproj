@@ -186,6 +186,10 @@
   <ItemGroup>
     <Content Include="Content\Images\account.png" />
     <Content Include="Content\Images\shopping_cart.png" />
+    <Content Include="DBScripts\CreateScript.sql" />
+    <Content Include="DBScripts\HinhAnhMatSau.sql" />
+    <Content Include="DBScripts\HinhAnhMatTruoc.sql" />
+    <Content Include="DBScripts\Product.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\site.css" />

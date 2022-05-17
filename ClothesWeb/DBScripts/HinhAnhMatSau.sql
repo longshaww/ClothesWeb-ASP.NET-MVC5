@@ -1,0 +1,144 @@
+
+--Top1
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P0',N'IM131','//product.hstatic.net/200000280689/product/chaos_45850d84a98f4f5991153d7dac32519a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P1',N'IM132','//product.hstatic.net/200000280689/product/plannet_co_f04cd74e88084fe4926d164643ee7817_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P2',N'IM133','//product.hstatic.net/200000280689/product/8095c4d160efafb1f6fe_9b5718e506964f0fb0930097289c9991_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P3',N'IM134','//product.hstatic.net/200000280689/product/32af93d1f6703a2e6361_7d9e86993a184d8694dd285830c7879f_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P4',N'IM135','//product.hstatic.net/200000280689/product/6e95cbee-edb1-4ee5-880f-fe9e8ee1034d_b6f854a04557464d809eb30d75492f69_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P5',N'IM136','//product.hstatic.net/200000280689/product/sticker_do_trc_2b43d29300dd4c15b7778b117ecf3f36_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P6',N'IM137','//product.hstatic.net/200000280689/product/4dfa34247f1ab544ec0b_67e3909f3df04fcf8f119da93eb7c1d3_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P7',N'IM138','//product.hstatic.net/200000280689/product/0dc0b87ef4403e1e6751_c22927787907449991e17e663e25e918_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P8',N'IM139','//product.hstatic.net/200000280689/product/912de293aead64f33dbc_ea1a0c4605b64e1784669fea0d867908_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P9',N'IM140','//product.hstatic.net/200000280689/product/44_049c2d1a87e542708dfb186d0bc0898f_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P10',N'IM141','//product.hstatic.net/200000280689/product/free_nau_e53ac1adad4f412bb3854bfa0f1fc338_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P11',N'IM142','//product.hstatic.net/200000280689/product/free_beige_cfc48c11be234af7a8a913b2bfc24d2f_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P12',N'IM143','//product.hstatic.net/200000280689/product/gra_trang_trc_ae103149624148c7ae8f5114c0614c0f_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P13',N'IM144','//product.hstatic.net/200000280689/product/gra_den_trc_91195fd0d24b4cec831e1aa9ad2437f4_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P14',N'IM145','//product.hstatic.net/200000280689/product/zoo_den_trc_db10d31b47ea4604b020d57c8b4869b9_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P15',N'IM146','//product.hstatic.net/200000280689/product/zoo_trang_trc_bd268d57fdf449c385879c074d42aaa3_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P16',N'IM147','//product.hstatic.net/200000280689/product/mon_den_trc_a4329ad33951463d872b12f6a896b55d_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P17',N'IM148','//product.hstatic.net/200000280689/product/mon_trang_trc_a77da1c5a2f94da4a5007eb16965995a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P18',N'IM149','//product.hstatic.net/200000280689/product/spray_nau_ec0ae2bdd8bf406aa29ccd7fc8bf185c_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P19',N'IM150','//product.hstatic.net/200000280689/product/15fd1b79-5300-4329-9436-30e1194912d2_9d21964973d547b0b23bb0f56ea9836d_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P20',N'IM151','//product.hstatic.net/200000280689/product/df0ac8ac94cf5f9106de_73f00060726743f58a505d30f6adf947_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P21',N'IM152','//product.hstatic.net/200000280689/product/8dd51752-065b-4117-bdf0-f3ac41a4040a_740fef392bd6466ca0398cddc8fedb1f_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P22',N'IM153','//product.hstatic.net/200000280689/product/8483a84a91295a770338_278c9125cf9e4df69d11fe22c323a2cc_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P23',N'IM154','//product.hstatic.net/200000280689/product/99c314162c75e72bbe64_33077d38dcf9488cb1c3e2b5e5cc9f6a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P24',N'IM155','//product.hstatic.net/200000280689/product/60gxgxz0orye-1-qbq4-hinh_mat_truoc-0_cff47920f2e343baa4b9c11ca62acc35_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P25',N'IM156','//product.hstatic.net/200000280689/product/60gxgxz0orye-1-kcmr-hinh_mat_truoc-0_e85d9c901abe462cb9fabe74a5f5611e_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P26',N'IM157','//product.hstatic.net/200000280689/product/60gxgxz0orye-1-snww-hinh_mat_truoc-0_32d1ac493eb04021a0e952cbf9920b19_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P27',N'IM158','//product.hstatic.net/200000280689/product/gi26drfg2mle-1-xjaj-hinh_mat_truoc-0_027bb05341844b5883dd32f2f938b0e6_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P28',N'IM159','//product.hstatic.net/200000280689/product/6_d2b7a198ee1e4149b7620c01345c10f4_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P29',N'IM160','//product.hstatic.net/200000280689/product/1-te1001-1-none_ad50ffdc5dc74cea8ace2731f764db7f_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P30',N'IM161','//product.hstatic.net/200000280689/product/56_b6a0a30380fc4682a5a2e50dfbdd8d4a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P31',N'IM162','//product.hstatic.net/200000280689/product/54_235b1f23c3e54a899a5d86184ff20d2a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P32',N'IM163','//product.hstatic.net/200000280689/product/62_6f289fdb157c4d25b8890a259b36be66_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P33',N'IM164','//product.hstatic.net/200000280689/product/48_4b9ba67e76984eb3924b1f8a4955f120_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P34',N'IM165','//product.hstatic.net/200000280689/product/2_32843e1bf0b14656962fd317b75c9926_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P35',N'IM166','//product.hstatic.net/200000280689/product/badge_nau_b7555ab7d0c94fc1a9a56d8fcf4acac4_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P36',N'IM167','//product.hstatic.net/200000280689/product/badge_do_20f2d6c96dc14e6ba3eb36550d3c7df5_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P37',N'IM168','//product.hstatic.net/200000280689/product/badge_xanh_la_8d562eb9944943298e5c6ab5cd250331_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P38',N'IM169','//product.hstatic.net/200000280689/product/badge_beige_a866f413f48445e3aba0a445880b285b_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P39',N'IM170','//product.hstatic.net/200000280689/product/badge_den_7813c690cbee4226bf0d03d54c4a57b7_grande.jpg');
+--Top2
+
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P40',N'IM171','//product.hstatic.net/200000280689/product/badge_trang_b6c392894260426588d2e9e9b4772263_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P41',N'IM172','//product.hstatic.net/200000280689/product/015ee7c7-cd5b-449a-b7c7-b3735876681c_ff1ed6149f114cac9851e9cd35cd8039_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P42',N'IM173','//product.hstatic.net/200000280689/product/6c0a505b-4980-4c58-92e8-46886c8c3c91_5aa7b8d4bb5243569ef986870a252158_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P43',N'IM174','//product.hstatic.net/200000280689/product/94041adf-b69c-4816-9ef8-5afaa2b72189_19d44f6eb8984ea2a9770b84b5d7c523_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P44',N'IM175','//product.hstatic.net/200000280689/product/700e53d4-b03f-45eb-a1d9-55304ff95c55_13df6e4a182047189013388139902897_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P45',N'IM176','//product.hstatic.net/200000280689/product/f796c82d-cd71-49ce-a170-1a0296b15904_08abfb6bc0a748a4b71253ff515e99e5_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P46',N'IM177','//product.hstatic.net/200000280689/product/93756605-0b53-45fe-84f3-17d3b9fb3cdb_62f619a33eeb40ac9b0d6ca2d1719c4d_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P47',N'IM178','//product.hstatic.net/200000280689/product/72278ce7388cf0d2a99d_8c2543369bae4d00af6d311a0b19bbad_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P48',N'IM179','//product.hstatic.net/200000280689/product/65925341e72a2f74763b_3f3780e5bba14ef4a5e0a9972f2249b3_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P49',N'IM180','//product.hstatic.net/200000280689/product/33af70900bdbc2859bca_be0251303de74b84a9e9f46235af2026_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P50',N'IM181','//product.hstatic.net/200000280689/product/wfd7euk9lkhs-1-25vl-hinh_mat_truoc-0_da3f6ad71fe54547ac424c50b543a175_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P51',N'IM182','//product.hstatic.net/200000280689/product/wfd7euk9lkhs-1-fuxg-hinh_mat_truoc-0_8cd0f3fb8b4e4b54a5bf0956127c85e2_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P52',N'IM183','//product.hstatic.net/200000280689/product/wfd7euk9lkhs-1-6mev-hinh_mat_truoc-0_2a9bb017cee542c9a1cedf6d45c7f10b_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P53',N'IM184','//product.hstatic.net/200000280689/product/wfd7euk9lkhs-1-6ksi-hinh_mat_truoc-0_db3631d57e984582a634873a42dc5d78_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P54',N'IM185','//product.hstatic.net/200000280689/product/de692199b77a42241b6b_e0d9a5b12ec14fa3828ea0c6946bf0aa_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P55',N'IM186','//product.hstatic.net/200000280689/product/d8a0b336aa4b5f15065a_6b49a0e32a7f43d79732c1a6644f576a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P56',N'IM187','//product.hstatic.net/200000280689/product/cd3b7dac64d1918fc8c0_64051b50733b4117ab9fdc449c1c3b89_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P57',N'IM188','//product.hstatic.net/200000280689/product/6_24e65d229d4946f7a63861b5125fc5ba_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P58',N'IM189','//product.hstatic.net/200000280689/product/2_d6d48c166d0441b980070691bd82f82d_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P59',N'IM190','//product.hstatic.net/200000280689/product/b34_252666f5e41a458db746e2b60ae31fac_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P60',N'IM191','//product.hstatic.net/200000280689/product/tlg7n0g7-1-12gz-hinh_mat_sau-0_9f0311dfd2ab4a5ea638a2f0522031f8_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P61',N'IM192','//product.hstatic.net/200000280689/product/tlg7n0g7-1-j2yh-hinh_mat_sau-0_8aba421863794ac4a1188c006e638f3a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P62',N'IM193','//product.hstatic.net/200000280689/product/tlg7n0g7-1-fllj-hinh_mat_sau-0_4b45f9ab554c447a85cb0bc2e7c8eaef_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P63',N'IM194','//product.hstatic.net/200000280689/product/tlg7n0g7-1-di1v-hinh_mat_sau-0_926fb557a0ef45a78f9d4aa41fe65b31_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P64',N'IM195','//product.hstatic.net/200000280689/product/wfd7euk9lkhs-1-u8x5-hinh_mat_sau-0_0e906531d46e42e58ac410834e108dc3_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P65',N'IM196','//product.hstatic.net/200000280689/product/wfd7euk9lkhs-1-rty1-hinh_mat_sau-0_16fbb90153cd4fa3b71241916043b994_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P66',N'IM197','//product.hstatic.net/200000280689/product/gi26drfg2mle-1-7g9t-hinh_mat_truoc-0_d5fdd8a95b9146bcb68597f29b00d2fd_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P67',N'IM198','//product.hstatic.net/200000280689/product/5-te1001-2-none_b90336c6d89c44b99486f1cfaad6089a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P68',N'IM199','//product.hstatic.net/200000280689/product/8-te1001-2-none_769294c898ad4f05bb23d25b1aded8a9_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P69',N'IM200','//product.hstatic.net/200000280689/product/7-te1001-2-none_316769124555400fb9d69c51e11b45d5_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P70',N'IM201','//product.hstatic.net/200000280689/product/6-te1001-2-none_e3515293e35e41f5ba845bb8834503be_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P71',N'IM202','//product.hstatic.net/200000280689/product/9-te1001-2-none_36ca4c9c746841afa6c5857dedf8ceeb_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P72',N'IM203','//product.hstatic.net/200000280689/product/5-1_297548b0293342508386b358a133d8da_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P73',N'IM204','//product.hstatic.net/200000280689/product/3_78707666ab834269999391f9f940de3f_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P74',N'IM205','//product.hstatic.net/200000280689/product/5_8cc85899de944c44bc77088d7510716c_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P75',N'IM206','//product.hstatic.net/200000280689/product/1-1-none_9e9171a7c88043dd97723c320249ad1f_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P76',N'IM207','//product.hstatic.net/200000280689/product/3b2b2feec62d33736a3c_bec8954dd46747e0928bff0b9568c9c3_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P77',N'IM208','//product.hstatic.net/200000280689/product/86c5ae1147d2b28cebc3_da47ceb83e0743dda37e4ab48b7b9418_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P78',N'IM209','//product.hstatic.net/200000280689/product/z2471665285867_6261109ce433a2acb19629e043317641_2b50f1b886674bdf84e04e4d80860614_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P79',N'IM210','//product.hstatic.net/200000280689/product/z2315333337245_45ea75a8e35f01f90387a623e1884ca3_3209339526c24d54951d525c42bf5a8c_grande.jpg');
+
+--Top3
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P80',N'IM211','//product.hstatic.net/200000280689/product/banh_quy_truoc_0bc1620c2d5a4f1b907795c730c65826_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P81',N'IM212','//product.hstatic.net/200000280689/product/b24_a88854cd4fa24d9cb825487667c00ae0_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P82',N'IM213','//product.hstatic.net/200000280689/product/sushi_truoc_0f0143110bc347a089dc92264b7db6db_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P83',N'IM214','//product.hstatic.net/200000280689/product/z2450759354472_8688e9786472b8f04121ceb689547a45_104c0cf95a0e4421bafcff70d6bdb3d8_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P84',N'IM215','//product.hstatic.net/200000280689/product/kiotviet_608d65c1a0a77f826734a32a2c939bf7_2a1c2fdf8b364c1a9a07d6ef522690c2_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P85',N'IM216','//product.hstatic.net/200000280689/product/kiotviet_1e9bbbc1455bcf62f814e8913b5a9ad9_5dbdefa37ca4407eabd63af46e2fd669_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P86',N'IM217','//product.hstatic.net/200000280689/product/khu_tap_the_truoc_bba0dce569b643909411db7c2155f1fe_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P87',N'IM218','//product.hstatic.net/200000280689/product/2_53bc67baa7c64fc3bdbf650d0092fba9_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P88',N'IM219','//product.hstatic.net/200000280689/product/buom_truoc_560426f01d8e42f68d0513b5e6b7cdca_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P89',N'IM220','//product.hstatic.net/200000280689/product/bs_nau_trc_728cdfdad6f14cae94bc3c364bc02212_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P90',N'IM221','//product.hstatic.net/200000280689/product/7_ccc0a6563bd14be1b75ebfdad60382bc_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P91',N'IM222','//product.hstatic.net/200000280689/product/6e65f152cc5704095d46_9d2c00f177b94a3a9c6a6fd24e8f0945_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P92',N'IM223','//product.hstatic.net/200000280689/product/bs_xl_trc_6280b84aada7412fad6337d729495c0a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P93',N'IM224','//product.hstatic.net/200000280689/product/3aa68044be41761f2f50_dbc87f48c3344635804133a7f36fef4b_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P94',N'IM225','//product.hstatic.net/200000280689/product/5ccceb74d6711e2f4760_c44a5a6f94e34f7896607a79753657f1_grande.jpg');
+
+--Bottoms   
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P95',N'IM226','//product.hstatic.net/200000280689/product/42_8d93092bf6c046eeb5a1f994afa8989c_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P96',N'IM227','//product.hstatic.net/200000280689/product/46_44a1c9a624c242c590a2ba666c6efb4b_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P97',N'IM228','//product.hstatic.net/200000280689/product/z2426817299180_f727f3819d79ff56002979aad9e42def_3b33507436d441218c9ae6b73813b68a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P98',N'IM229','//product.hstatic.net/200000280689/product/4-te9206-2-none_056c35dacc304fe9ad2505c115873ec3_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P99',N'IM230','//product.hstatic.net/200000280689/product/37_ed942c51bc1e4310bf3e7973f3a51bc6_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P100',N'IM231','//product.hstatic.net/200000280689/product/41_647caaa0e98642b7a3dc89713be13e91_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P101',N'IM232','//product.hstatic.net/200000280689/product/39_e60cb626af4b438b812c42591028221d_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P102',N'IM233','//product.hstatic.net/200000280689/product/thiet_ke_khong_ten__26__d9568e3247404724a297c6f0c8c363ea_grande.png');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P103',N'IM234','//product.hstatic.net/200000280689/product/thiet_ke_khong_ten__27__1fd6b2b0b67d4feb8a4613025edc1c04_grande.png');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P104',N'IM235','//product.hstatic.net/200000280689/product/short_06ac16561446432e90db62536558eee6_grande.jpg');
+
+--Outerwears
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P105',N'IM236','//product.hstatic.net/200000280689/product/2889c6f4a3556f0b3644_9f249e87b8af4240b94e1fba65f04220_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P106',N'IM237','//product.hstatic.net/200000280689/product/f510a80b-cc3c-4f6a-a5cd-a57544467446_3eb35cc5b0f04e148e2303aeb7abff68_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P107',N'IM238','//product.hstatic.net/200000280689/product/vas_den_sau_263c41a2cebc4765a4ab0a4ff44dec04_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P108',N'IM239','//product.hstatic.net/200000280689/product/vas_xanh_sau_bc3b74a0cf8149d2a4fc9d5d3ba3e9aa_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P109',N'IM240','//product.hstatic.net/200000280689/product/fdf41f35674cac12f55d_b00a548879754acdb7708245abb81751_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P110',N'IM241','//product.hstatic.net/200000280689/product/ac4a42e8dad0118e48c1_9cb74ea5071d4178b311c2557967fd20_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P111',N'IM242','//product.hstatic.net/200000280689/product/203347793f00f45ead11_c30b9d854506427ba8c5bc47b7eae62a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P112',N'IM243','//product.hstatic.net/200000280689/product/2d535fb2b8f073ae2ae1_bac37fed0a3d42f8b464eb4b096bf210_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P113',N'IM244','//product.hstatic.net/200000280689/product/0c6d65bb82f949a710e8_9290e728628549178718325c6bd1a675_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P114',N'IM245','//product.hstatic.net/200000280689/product/ccb814c6f1843ada6395_f0bf1f521a794a7a87ab95c979069877_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P115',N'IM246','//product.hstatic.net/200000280689/product/af3485d9b62f7971203e_e6e61b7d015342d6abab6e4c70562325_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P116',N'IM247','//product.hstatic.net/200000280689/product/e40eabea981c57420e0d_10f8f7aa53924517b579d01b435f6d91_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P117',N'IM248','//product.hstatic.net/200000280689/product/23_1071d29f5a9a46a3b5b172f24e93d41f_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P118',N'IM249','//product.hstatic.net/200000280689/product/10_0250346528db4bfcbb6c2d710ed6c252_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P119',N'IM250','//product.hstatic.net/200000280689/product/8fd43acc08ddfd83a4cc_c8f733a302164ef4aa980d65cc9dc73a_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P120',N'IM251','//product.hstatic.net/200000280689/product/0e4da6e1-be0e-4edc-baf6-5060b229bffd_dc0c1ed56a104ad19365b956a4f71e60_grande.jpeg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P121',N'IM252','//product.hstatic.net/200000280689/product/7730dc0aa7416e1f3750_878830f00b8e4b5ca8215ca57c08af87_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P122',N'IM253','//product.hstatic.net/200000280689/product/eyaorcgq-1-9p4k-hinh_mat_sau-0_6d706e000f3d4e75be930dc5422a15f7_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P123',N'IM254','//product.hstatic.net/200000280689/product/11_2f2ea1f7cecc417f8c73f98ff69362ca_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P124',N'IM255','//product.hstatic.net/200000280689/product/3-ta9504-tx02-2-none_2a7e6a62dc9548999813b99b0d8aaf46_grande.jpg');
+
+--Accessories
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P125',N'IM256','//product.hstatic.net/200000280689/product/cap2_fbf1ac0d96484bb8b26336c60cb87c75_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P126',N'IM257','//product.hstatic.net/200000280689/product/cap4_2d829b6fc5d64cf5a8d1b53947382d0f_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P127',N'IM258','//product.hstatic.net/200000280689/product/thiet_ke_khong_ten__37__162a743f86674cfab506c29cbf8f935d_grande.png');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P128',N'IM259','//product.hstatic.net/200000280689/product/thiet_ke_khong_ten__39__2ad04ec3b83047909d6f9c7ab4e5a896_grande.png');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P129',N'IM260','//product.hstatic.net/200000280689/product/1513a52c8f527a0c2343_7d2bde24a869419bb5f2782febf7a450_grande.jpg');
+INSERT INTO ImageProduct(idProduct,idImage,URLImage) VALUES (N'P130',N'IM261','//product.hstatic.net/200000280689/product/1513a52c8f527a0c2343_516db5bd44aa4326b2961e4ea826c99d_grande.jpg');
+
