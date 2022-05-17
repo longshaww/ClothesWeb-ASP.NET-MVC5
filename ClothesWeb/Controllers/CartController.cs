@@ -10,7 +10,7 @@ namespace ClothesWeb.Controllers
     public class CartController : Controller
     {
 
-        highclubEntities db = new highclubEntities();
+        clothesEntities db = new clothesEntities();
         public Cart GetCart()
         {
             Cart cart = Session["Cart"] as Cart;

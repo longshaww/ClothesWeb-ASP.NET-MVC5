@@ -423,7 +423,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="highclubEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="clothesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bill" EntityType="Self.Bill" />
           <EntitySet Name="Collection" EntityType="Self.Collection" />
           <EntitySet Name="Customer" EntityType="Self.Customer" />
@@ -467,7 +467,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="highclubModelStoreContainer" CdmEntityContainer="highclubEntities">
+        <EntityContainerMapping StorageEntityContainer="highclubModelStoreContainer" CdmEntityContainer="clothesEntities">
           <EntitySetMapping Name="Bill">
             <EntityTypeMapping TypeName="highclubModel.Bill">
               <MappingFragment StoreEntitySet="Bill">

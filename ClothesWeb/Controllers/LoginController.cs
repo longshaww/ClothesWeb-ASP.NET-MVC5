@@ -10,7 +10,7 @@ namespace ClothesWeb.Controllers
 {
     public class LoginController : Controller
     {
-        private highclubEntities db = new highclubEntities();
+        private clothesEntities db = new clothesEntities();
         // GET: Login
         public ActionResult Index(String errorUsername,String errorPassword)
         {

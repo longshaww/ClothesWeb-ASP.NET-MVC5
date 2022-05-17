@@ -14,7 +14,7 @@ namespace ClothesWeb.Controllers
   
     public class ProductsController : Controller
     {
-        private highclubEntities db = new highclubEntities();
+        private clothesEntities db = new clothesEntities();
 
         // GET: Products
         public ActionResult Index(String nameProduct,String idCollection)

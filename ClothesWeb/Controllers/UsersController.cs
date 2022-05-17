@@ -12,7 +12,7 @@ namespace ClothesWeb.Controllers
 {
     public class UsersController : Controller
     {
-        private highclubEntities db = new highclubEntities();
+        private clothesEntities db = new clothesEntities();
 
         // GET: Users
         public ActionResult Index()

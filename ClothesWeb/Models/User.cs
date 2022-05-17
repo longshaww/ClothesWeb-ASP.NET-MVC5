@@ -38,7 +38,7 @@ namespace ClothesWeb.Models
         public virtual Permission Permission { get; set; }
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            highclubEntities db = new highclubEntities();
+            clothesEntities db = new clothesEntities();
             List<ValidationResult> validationResult = new List<ValidationResult>();
             var validateName = db.User.FirstOrDefault(x => x.username == username);
             if (validateName != null)

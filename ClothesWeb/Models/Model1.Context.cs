@@ -13,10 +13,10 @@ namespace ClothesWeb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class highclubEntities : DbContext
+    public partial class clothesEntities : DbContext
     {
-        public highclubEntities()
-            : base("name=highclubEntities")
+        public clothesEntities()
+            : base("name=clothesEntities")
         {
         }
     

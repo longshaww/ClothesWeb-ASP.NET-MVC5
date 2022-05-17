@@ -9,7 +9,7 @@ namespace ClothesWeb.Controllers
 {
     public class PaymentController : Controller
     {
-        private highclubEntities db = new highclubEntities();
+        private clothesEntities db = new clothesEntities();
         // GET: Payment
         public ActionResult Index(String error)
         {
