@@ -11,7 +11,10 @@ namespace ClothesWeb.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+    using System.Web;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -35,5 +38,10 @@ namespace ClothesWeb.Models
         public virtual ICollection<DetailBIll> DetailBIll { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ImageProduct> ImageProduct { get; set; }
+       
+        
+        [NotMapped]
+        public HttpPostedFileBase[] ImageUpload { get; set; }
+
     }
 }

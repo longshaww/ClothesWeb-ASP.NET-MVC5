@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Dynamic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -58,10 +59,22 @@ namespace ClothesWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "nameProduct,idCollection,idProduct,sizeM,sizeL,sizeXL,price,isNew")] Product product)
+        public ActionResult Create([Bind(Include = "nameProduct,idCollection,idProduct,sizeM,sizeL,sizeXL,price,isNew")] Product product , IEnumerable<HttpPostedFileBase> ImageUpload)
         {
-            if (ModelState.IsValid)
+      
+            if (ModelState.IsValid && ImageUpload.Count() > 0)
             {
+                foreach (var file in ImageUpload)
+                {
+                    var InputFileName = Path.GetFileName(file.FileName);
+                    var ServerSavePath = Path.Combine(Server.MapPath("~/Content/images/") + InputFileName);
+                    file.SaveAs(ServerSavePath);
+                    ImageProduct imgProd = new ImageProduct();
+                    imgProd.idProduct = product.idProduct;
+                    imgProd.idImage = Guid.NewGuid().ToString();
+                    imgProd.URLImage = "~/Content/images/" + file.FileName;
+                    db.ImageProduct.Add(imgProd);
+                }
                 db.Product.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -16,7 +16,7 @@
     {
         <div class="col">
             <div class="card m-2 border-0" style="width: 18rem;">
-                <img src=@item.ImageProduct.First().URLImage class="card-img-top">
+                <img src=@Url.Content(item.ImageProduct.FirstOrDefault().URLImage) class="card-img-top">
                 <div class="card-body text-center">
                     <h5 class="card-title">@item.nameProduct</h5>
                     <p class="card-text">@item.price,000đ</p>
