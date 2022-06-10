@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="13a379bce0624bdbbd9a8dab6b075c15" Name="Diagram1">
-        <EntityTypeShape EntityType="highclubModel.Bill" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.Collection" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.Customer" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.DetailBIll" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.ImageProduct" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.Permission" Width="1.5" PointX="1.5" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.Product" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.User" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="highclubModel.Voucher" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="highclubModel.FK__Bill__idCustomer__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="highclubModel.FK__Bill__idUser__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="highclubModel.FK__DetailBIl__idBil__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="highclubModel.FK__Product__idColle__36B12243" ManuallyRouted="false" />
-        <AssociationConnector Association="highclubModel.FK__DetailBIl__idPro__35BCFE0A" ManuallyRouted="false" />
-        <AssociationConnector Association="highclubModel.FK__ImageProd__idPro__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="highclubModel.FK__User__idPermissi__38996AB5" ManuallyRouted="false" />
+      <Diagram DiagramId="f176c9e076cb4bbdace0118c575d900f" Name="Diagram1">
+        <EntityTypeShape EntityType="clothesModel.Bill" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="clothesModel.Collection" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="clothesModel.Customer" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="clothesModel.DetailBIll" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="clothesModel.ImageProduct" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="clothesModel.Permission" Width="1.5" PointX="1.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="clothesModel.Product" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="clothesModel.User" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="clothesModel.Voucher" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="clothesModel.FK__Bill__idCustomer__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="clothesModel.FK__Bill__idUser__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="clothesModel.FK__DetailBIl__idBil__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="clothesModel.FK__Product__idColle__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="clothesModel.FK__DetailBIl__idPro__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="clothesModel.FK__ImageProd__idPro__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="clothesModel.FK__User__idPermissi__4D94879B" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

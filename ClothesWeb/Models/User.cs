@@ -11,10 +11,8 @@ namespace ClothesWeb.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-    public partial class User : IValidatableObject
+    
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
@@ -36,26 +34,5 @@ namespace ClothesWeb.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bill { get; set; }
         public virtual Permission Permission { get; set; }
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            clothesEntities db = new clothesEntities();
-            List<ValidationResult> validationResult = new List<ValidationResult>();
-            var validateName = db.User.FirstOrDefault(x => x.username == username);
-            if (validateName != null)
-            {
-                ValidationResult errorMessage = new ValidationResult
-                ("Username name already exists.", new[] { "Username" });
-                validationResult.Add(errorMessage);
-            }
-
-            return validationResult;
-        }
-
-        [Serializable]
-        public class getUserDTO
-        {
-            public string UserGroupID { get; set; }
-            public string UserGroupName { get; set; }
-        }
     }
 }
