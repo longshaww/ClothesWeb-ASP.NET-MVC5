@@ -8,10 +8,10 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Product</h4>
         <hr />
@@ -77,9 +77,14 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <label>Image upload</label>
+            <div class="col-md-10">
+                <input type="file" multiple name="ImageUpload" class="form-control" required />
             </div>
+        </div>
+
+        <div class="text-center mt-3">
+            <input type="submit" value="Save" class="btn btn-primary" />
         </div>
     </div>
 }

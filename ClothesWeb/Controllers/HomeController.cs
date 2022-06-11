@@ -26,5 +26,6 @@ namespace ClothesWeb.Controllers
 
             return View();
         }
+
     }
 }

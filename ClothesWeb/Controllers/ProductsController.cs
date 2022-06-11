@@ -12,19 +12,19 @@ using ClothesWeb.Models;
 
 namespace ClothesWeb.Controllers
 {
-  
+
     public class ProductsController : Controller
     {
         private clothesEntities db = new clothesEntities();
 
         // GET: Products
-        public ActionResult Index(String nameProduct,String idCollection)
+        public ActionResult Index(String nameProduct, String idCollection)
         {
             if (nameProduct != null)
             {
-              return View(db.Product.Where(s => s.nameProduct.Contains(nameProduct)).Include(s => s.ImageProduct).ToList());
+                return View(db.Product.Where(s => s.nameProduct.Contains(nameProduct)).Include(s => s.ImageProduct).ToList());
             }
-            if(idCollection != null)
+            if (idCollection != null)
             {
                 return View(db.Product.Where(s => s.idCollection.Equals(idCollection)).Include(s => s.ImageProduct).ToList());
             }
@@ -59,29 +59,35 @@ namespace ClothesWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "nameProduct,idCollection,idProduct,sizeM,sizeL,sizeXL,price,isNew")] Product product , IEnumerable<HttpPostedFileBase> ImageUpload)
+        public ActionResult Create([Bind(Include = "nameProduct,idCollection,idProduct,sizeM,sizeL,sizeXL,price,isNew")] Product product, IEnumerable<HttpPostedFileBase> ImageUpload)
         {
-      
-            if (ModelState.IsValid && ImageUpload.Count() > 0)
+            try
             {
-                foreach (var file in ImageUpload)
+                if (ModelState.IsValid && ImageUpload.Count() > 0)
                 {
-                    var InputFileName = Path.GetFileName(file.FileName);
-                    var ServerSavePath = Path.Combine(Server.MapPath("~/Content/images/") + InputFileName);
-                    file.SaveAs(ServerSavePath);
-                    ImageProduct imgProd = new ImageProduct();
-                    imgProd.idProduct = product.idProduct;
-                    imgProd.idImage = Guid.NewGuid().ToString();
-                    imgProd.URLImage = "~/Content/images/" + file.FileName;
-                    db.ImageProduct.Add(imgProd);
+                    foreach (var file in ImageUpload)
+                    {
+                        var InputFileName = Path.GetFileName(file.FileName);
+                        var ServerSavePath = Path.Combine(Server.MapPath("~/Content/images/") + InputFileName);
+                        file.SaveAs(ServerSavePath);
+                        ImageProduct imgProd = new ImageProduct();
+                        imgProd.idProduct = product.idProduct;
+                        imgProd.idImage = Guid.NewGuid().ToString();
+                        imgProd.URLImage = "~/Content/images/" + file.FileName;
+                        db.ImageProduct.Add(imgProd);
+                    }
+                    db.Product.Add(product);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
                 }
-                db.Product.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
 
-            ViewBag.idCollection = new SelectList(db.Collection, "idCollection", "nameCollection", product.idCollection);
-            return View(product);
+                ViewBag.idCollection = new SelectList(db.Collection, "idCollection", "nameCollection", product.idCollection);
+                return View(product);
+            }
+            catch
+            {
+                return Content("Error");
+            }
         }
 
         // GET: Products/Edit/5
@@ -105,16 +111,43 @@ namespace ClothesWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "nameProduct,idCollection,idProduct,sizeM,sizeL,sizeXL,price,isNew")] Product product)
+        public ActionResult Edit([Bind(Include = "nameProduct,idCollection,idProduct,sizeM,sizeL,sizeXL,price,isNew")] Product product, IEnumerable<HttpPostedFileBase> ImageUpload)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(product).State = EntityState.Modified;
+                var delImages = db.ImageProduct.Where(s=>s.idProduct.Equals(product.idProduct));
+                if (delImages != null)
+                {
+                    foreach(var image in delImages)
+                    {
+                        db.ImageProduct.Remove(image);
+                    }
+                }
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid && ImageUpload.Count() > 0)
+                {
+                    foreach (var file in ImageUpload)
+                    {
+                        var InputFileName = Path.GetFileName(file.FileName);
+                        var ServerSavePath = Path.Combine(Server.MapPath("~/Content/images/") + InputFileName);
+                        file.SaveAs(ServerSavePath);
+                        ImageProduct imgProd = new ImageProduct();
+                        imgProd.idProduct = product.idProduct;
+                        imgProd.idImage = Guid.NewGuid().ToString();
+                        imgProd.URLImage = "~/Content/images/" + file.FileName;
+                        db.ImageProduct.Add(imgProd);
+                    }
+                    db.Entry(product).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                ViewBag.idCollection = new SelectList(db.Collection, "idCollection", "nameCollection", product.idCollection);
+                return View(product);
             }
-            ViewBag.idCollection = new SelectList(db.Collection, "idCollection", "nameCollection", product.idCollection);
-            return View(product);
+            catch
+            {
+                return Content("Error");
+            }
         }
 
         // GET: Products/Delete/5
@@ -137,10 +170,24 @@ namespace ClothesWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
+            try { 
+            var delImages = db.ImageProduct.Where(s => s.idProduct.Equals(id));
+            if (delImages != null)
+            {
+                foreach (var image in delImages)
+                {
+                    db.ImageProduct.Remove(image);
+                }
+            }
             Product product = db.Product.Find(id);
             db.Product.Remove(product);
             db.SaveChanges();
             return RedirectToAction("Index");
+            }
+            catch
+            {
+                return Content("Error");
+            }
         }
 
         protected override void Dispose(bool disposing)
