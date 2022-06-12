@@ -2,18 +2,12 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
-    if (Request.Cookies["admin"] != null)
-    {
-        Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    }
 }
 
-<h2>Index</h2>
+<canvas id="myChart"></canvas>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
 <table class="table">
     <tr>
@@ -80,3 +74,8 @@
     }
 </table>
 
+
+@section scripts {
+    @Scripts.Render("~/Scripts/index.bill.js")
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+}

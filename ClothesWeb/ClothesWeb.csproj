@@ -131,6 +131,7 @@
     <Compile Include="Controllers\BillsController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\jsonserializersettings.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -213,6 +214,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\index.bill.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -258,7 +260,6 @@
     <Content Include="Views\Bills\Details.cshtml" />
     <Content Include="Views\Bills\Edit.cshtml" />
     <Content Include="Views\Bills\Index.cshtml" />
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

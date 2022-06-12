@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ClothesWeb.Models;
+using Newtonsoft.Json;
 
 namespace ClothesWeb.Controllers
 {
@@ -26,6 +28,30 @@ namespace ClothesWeb.Controllers
             return View(bill.ToList());
         }
 
+        public ActionResult Chart()
+        {
+            var bills = from DT in db.DetailBIll
+                        where
+                          SqlFunctions.DatePart("month", DT.Bill.createdAt) == SqlFunctions.DatePart("month", SqlFunctions.GetDate())
+                        group DT.Bill by new
+                        {
+                            Column1 = SqlFunctions.DateName("day", DT.Bill.createdAt) + "/" + SqlFunctions.DateName("month", DT.Bill.createdAt) + "/" + SqlFunctions.DateName("year", DT.Bill.createdAt)
+
+                        } into g
+                        orderby
+                          g.Key.Column1
+                        select new
+                        {
+                            Date = g.Key.Column1,
+                            totalMoney = (double?)g.Sum(p => p.Total)
+                        };
+            var list = JsonConvert.SerializeObject(bills, Formatting.None,
+            new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            });
+            return Content(list, "application/json");
+        }
         // GET: Bills/Details/5
         public ActionResult Details(string id)
         {
