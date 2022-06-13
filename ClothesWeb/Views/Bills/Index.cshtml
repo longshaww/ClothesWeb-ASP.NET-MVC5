@@ -6,9 +6,25 @@
 
 }
 
-<canvas id="myChart"></canvas>
+@section styles {
+    @Styles.Render("~/Content/feature.info.css")
+}
+<div class="featured my-5">
+    <div class="featuredItem">
+        <span class="featuredTitle">Revanue</span>
+        <div class="featuredMoneyContainer">
+            <span class="featuredMoney">
+                100.000 vnd
+            </span>
+        </div>
+        <span class="featuredSub">Compared to last month</span>
+    </div>
+</div>
+<div class="mb-5">
+    <canvas id="myChart"></canvas>
+</div>
 
-
+<h3 class="my-3">Transactions</h3>
 <table class="table">
     <tr>
         <th>
@@ -33,7 +49,13 @@
             @Html.DisplayNameFor(model => model.Customer.name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User.idPermission)
+            @Html.DisplayNameFor(model => model.DetailBIll.FirstOrDefault().Product.nameProduct)
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            Actions
         </th>
         <th></th>
     </tr>
@@ -63,7 +85,18 @@
                 @Html.DisplayFor(modelItem => item.Customer.name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.User.idPermission)
+                <ul>
+                    @foreach (var bill in item.DetailBIll)
+                    {
+                        <li>@bill.Product.nameProduct</li>
+                    }
+                </ul>
+            </td>
+            <td>
+                @foreach (var bill in item.DetailBIll)
+                {
+                    <img src="@bill.Product.ImageProduct.FirstOrDefault().URLImage" class="w-25 h-25" />
+                }
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.idBill }) |

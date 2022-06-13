@@ -1,9 +1,23 @@
 ﻿
 
+
+function formatPrice(price) {
+    if (price.toString().length > 3) {
+        return price + ",00 VND";
+    }
+    if (price === 0) {
+        return price + " VNĐ";
+    }
+    return price + ",000 VNĐ";
+}
+
 window.onload = async () => {
     const response = await fetch("/Bills/Chart");
     const data = await response.json();
-    console.log(data);
+    const tempTotal = data.reduce((a, b) => a + b.totalMoney, 0);
+    if (tempTotal) {
+        $(".featuredMoney").html(formatPrice(tempTotal));
+    }
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'line',
