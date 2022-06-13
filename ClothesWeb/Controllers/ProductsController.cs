@@ -32,6 +32,7 @@ namespace ClothesWeb.Controllers
             return View(products.ToList());
         }
 
+
         // GET: Products/Details/5
         public ActionResult Details(string id)
         {
@@ -39,7 +40,7 @@ namespace ClothesWeb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Product.Find(id);
+            Product product = db.Product.Include(s => s.DetailBIll).Where(s => s.idProduct.Equals(id)).FirstOrDefault();
             if (product == null)
             {
                 return HttpNotFound();

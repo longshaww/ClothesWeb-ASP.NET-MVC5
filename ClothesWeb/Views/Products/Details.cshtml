@@ -5,68 +5,121 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Styles.Render("~/Content/feature.info.css")
 
-<div>
-    <hr />
+<input type="hidden" value="@Model.idProduct" id="idProduct" />
+<div class="container">
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col">
+            <img src=@Url.Content(Model.ImageProduct.FirstOrDefault().URLImage)
+                 alt=""
+                 class="img-fluid" />
+            <div class="gallery d-flex">
 
-    <div class="container">
-        <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col">
-                <img src=@Url.Content(Model.ImageProduct.FirstOrDefault().URLImage)
-                     alt=""
-                     class="img-fluid" />
-                <div class="gallery d-flex">
-
-                </div>
             </div>
-            <div class="col">
-                <h4>
-                    @Html.DisplayFor(model => model.nameProduct)
-                </h4>
-                <h6 class="mb-3">
-                    @Html.DisplayFor(model => model.price),000đ
-                </h6>
-                <div class="d-flex mb-4">
-                    <form action="/Cart/AddtoCart/@Model.idProduct" method="POST" id="sizeForm">
-                        <div id="radio-list"
-                             class="me-3">
-                            M @Html.RadioButton("Size", "sizeM", true)
-                            L @Html.RadioButton("Size", "sizeL")
-                            XL @Html.RadioButton("Size", "sizeXL")
-                        </div>
-                    </form>
-                </div>
-                <div class="wrap-btn">
-                    <button class="btn btn-dark btn-cart d-block mb-3" onclick="window.location.href='/Cart/AddtoCart/@Model.idProduct'" type="submit" form="sizeForm">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <button class="btn btn-dark btn-cart d-block mb-3" onclick="window.location.href='/Payment'">
-                        Thanh toán
-                    </button>
-                </div>
-                <div class="product-description">
-                    <p class="fs-6 fw-bold text-decoration-underline pb-3 border-bottom">
-                        Mô tả sản phẩm
-                    </p>
-                    <p class="fs-6 pb-3 border-bottom">
-                        CHINH SÁCH GIAO HÀNG & ĐỔI TRẢ
-                        HÀNG
-                    </p>
-                </div>
+        </div>
+        <div class="col">
+            <h4>
+                @Html.DisplayFor(model => model.nameProduct)
+            </h4>
+            <h6 class="mb-3">
+                @Html.DisplayFor(model => model.price),000đ
+            </h6>
+            <div class="d-flex mb-4">
+                <form action="/Cart/AddtoCart/@Model.idProduct" method="POST" id="sizeForm">
+                    <div id="radio-list"
+                         class="me-3">
+                        M @Html.RadioButton("Size", "sizeM", true)
+                        L @Html.RadioButton("Size", "sizeL")
+                        XL @Html.RadioButton("Size", "sizeXL")
+                    </div>
+                </form>
+            </div>
+            <div class="wrap-btn">
+                <button class="btn btn-dark btn-cart d-block mb-3" onclick="window.location.href='/Cart/AddtoCart/@Model.idProduct'" type="submit" form="sizeForm">
+                    Thêm vào giỏ hàng
+                </button>
+                <button class="btn btn-dark btn-cart d-block mb-3" onclick="window.location.href='/Payment'">
+                    Thanh toán
+                </button>
+            </div>
+            <div class="product-description">
+                <p class="fs-6 fw-bold text-decoration-underline pb-3 border-bottom">
+                    Mô tả sản phẩm
+                </p>
+                <p class="fs-6 pb-3 border-bottom">
+                    CHINH SÁCH GIAO HÀNG & ĐỔI TRẢ
+                    HÀNG
+                </p>
             </div>
         </div>
     </div>
-    <div class="container">
-        <h4 class=" pb-3 border-bottom text-center">
-            SẢN PHẨM LIÊN QUAN
-        </h4>
+</div>
+<div class="container">
+    <h4 class=" pb-3 border-bottom text-center">
+        SẢN PHẨM LIÊN QUAN
+    </h4>
+</div>
+
+@if (Request.Cookies["Admin"] != null)
+{
+
+    <div class="featured my-3">
+        <div class="featuredItem">
+            <span class="featuredTitle">Doanh thu sản phẩm trong tháng</span>
+            <div class="featuredMoneyContainer">
+                <span class="featuredMoney">
+                </span>
+            </div>
+            <span class="featuredSub">Compared to last month</span>
+        </div>
+    </div>
+    <div class="my-5 text-center">
+        <h3 class="mb-3">Thống kê doanh thu sản phẩm</h3>
+        <canvas id="productChart"></canvas>
     </div>
 
+    <div class="my-5 text-center">
+        <h3 class="mb-3">Những người đã mua sản phẩm này</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tên khách hàng</th>
+                        <th>Số lượng</th>
+                        <th>Tổng tiền trên sản phẩm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.DetailBIll)
+                    {
+                        <tr>
+                            <td>
+                                @item.Bill.Customer.name
+                            </td>
+                            <td>@item.qty</td>
+                            <td>@item.ProductTotal</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
 
-</div>
 <p>
+    @if (Request.Cookies["Admin"] != null)
+    {
+<span>
     @Html.ActionLink("Edit", "Edit", new { id = Model.idProduct }) |
     @Html.ActionLink("Delete", "Delete", new { id = Model.idProduct }) |
+</span>
+    }
     @Html.ActionLink("Back to List", "Index")
 </p>
 
+
+@section scripts {
+    @Scripts.Render("~/Scripts/chart.product.js")
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+}

@@ -14,7 +14,6 @@
         <span class="featuredTitle">Revanue</span>
         <div class="featuredMoneyContainer">
             <span class="featuredMoney">
-                100.000 vnd
             </span>
         </div>
         <span class="featuredSub">Compared to last month</span>
@@ -95,7 +94,9 @@
             <td>
                 @foreach (var bill in item.DetailBIll)
                 {
+                <a href="/products/details/@bill.Product.idProduct">
                     <img src="@bill.Product.ImageProduct.FirstOrDefault().URLImage" class="w-25 h-25" />
+                </a>
                 }
             </td>
             <td>

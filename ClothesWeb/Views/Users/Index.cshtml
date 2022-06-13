@@ -134,7 +134,7 @@
                         @Html.DisplayFor(modelItem => item.email)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.URLAvatar)
+                        <img src="@Url.Content(item.URLAvatar)" class="w-25 h-25 rounded-circle border border-dark"/>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.phone)

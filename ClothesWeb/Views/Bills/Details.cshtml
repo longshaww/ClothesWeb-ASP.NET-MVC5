@@ -5,79 +5,155 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+@section styles {
+    @Styles.Render("~/Content/detail.bill.css")
+}
 
-<div>
-    <h4>Bill</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Shipping)
-        </dt>
+<div class="my-5">
+    <div class="col-md-12">
+        <div class="row d-flex justify-content-center py-3 my-3">
+            <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3 mb-0">
+                <div class="row p-3">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="receipt-left">
+                            <img class="img-fluid rounded-circle w-75 h-75"
+                                 alt="iamgurdeeposahan"
+                                 src="https://file.hstatic.net/200000280689/file/newlogo_hc_den_0590f369aec14b9b9e925158204a3acf.png" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                        <div class="receipt-right">
+                            <h5>High club</h5>
+                            <p>
+                                0966615566
+                                <i class="fa fa-phone"></i>
+                            </p>
+                            <p>
+                                support@highclub.vn
+                                <i class="fa fa-envelope-o"></i>
+                            </p>
+                            <p>
+                                04 Phạm Ngũ Lão, Phường Nguyễn Thái Bình, Quận 1, Thành phố Hồ Chí Minh
+                                <i class="fa fa-location-arrow"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Shipping)
-        </dd>
+                <div class="row p-3">
+                    <div class="col-xs-6 col-sm-6 col-md-6 text-left">
+                        <div class="receipt-right">
+                            <h5>
+                                @Html.DisplayFor(model => model.Customer.name)
+                            </h5>
+                            <p>
+                                <b>Mobile :</b> @Html.DisplayFor(model => model.Customer.phone)
+                            </p>
+                            <p>
+                                <b>Email :</b> @Html.DisplayFor(model => model.Customer.address)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="receipt-left">
+                            <h5>INVOICE #@Html.DisplayFor(model => model.idBill)</h5>
+                        </div>
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Total)
-        </dt>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Quantity</th>
+                                <th>Size</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var prod in Model.DetailBIll)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-md-auto">
+                                                <img src={
+                                                     bill.body
+                                                     .hinhAnhBcts
+                                                     }
+                                                     class="img-fluid rounded-circle"
+                                                     style={{
+														width: "50px",
+														height: "50px",
+													}}
+                                                     alt="" />
+                                            </div>
+                                            <div class="ms-2 col">
+                                                @prod.Product.nameProduct
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>@prod.qty</td>
+                                    <td>
+                                        @prod.Size
+                                    </td>
+                                    <td>
+                                        @prod.ProductTotal
+                                    </td>
+                                </tr>
+                            }
 
-        <dd>
-            @Html.DisplayFor(model => model.Total)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PTTT)
-        </dt>
+                            <tr>
+                                <td colSpan="3"
+                                    class="text-end">
+                                    <div>Total</div>
+                                </td>
+                                <td>
+                                    <div>
+                                        500,000
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan="3"
+                                    class="text-end">
+                                    <div>Status</div>
+                                </td>
+                                <td>
+                                    <div>
+                                        @Html.DisplayFor(model => model.status)
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.PTTT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.createdAt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.createdAt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalQty)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TotalQty)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Customer.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Customer.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.User.idPermission)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.User.idPermission)
-        </dd>
-
-    </dl>
+                <div class="row">
+                    <div class="receipt-header receipt-header-mid receipt-footer">
+                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                            <div class="receipt-right">
+                                <p>
+                                    <b>Date :</b>
+                                    @Html.DisplayFor(model => model.createdAt)
+                                </p>
+                                <h5>
+                                    Thanks you for choosen our
+                                    service !
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.idBill }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
