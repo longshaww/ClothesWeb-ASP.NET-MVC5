@@ -1,31 +1,152 @@
-﻿@{
+﻿@model IEnumerable<ClothesWeb.Models.Product>
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+@section styles{
+    @Scripts.Render("~/Content/home.css")
+}
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+
+<div>
+    <div class="highclub">
+        <div id="carouselExampleCrossfade"
+             class="carousel slide carousel-fade"
+             data-mdb-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button"
+                        data-mdb-target="#carouselExampleCrossfade"
+                        data-mdb-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1"></button>
+                <button type="button"
+                        data-mdb-target="#carouselExampleCrossfade"
+                        data-mdb-slide-to="1"
+                        aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://file.hstatic.net/200000280689/file/z3348729031595_bc4693744958b1ae1cfff67b6fd492bf_9f6fe89750a8485ebddd2919d75a1c6c.jpg"
+                         class="d-block w-100"
+                         alt="" />
+                </div>
+                <div class="carousel-item">
+                    <img src="https://file.hstatic.net/200000280689/file/z3348729031595_bc4693744958b1ae1cfff67b6fd492bf_9f6fe89750a8485ebddd2919d75a1c6c.jpg"
+                         class="d-block w-100"
+                         alt="" />
+                </div>
+            </div>
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-mdb-target="#carouselExampleCrossfade"
+                    data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next"
+                    type="button"
+                    data-mdb-target="#carouselExampleCrossfade"
+                    data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <p class="fs-1 text-uppercase text-center mt-5 mb-3 font_title">
+            highclub - style
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div class="row">
+            <div class="col-md-4 px-1 banner_item">
+                <img alt=""
+                     src="https://file.hstatic.net/200000280689/file/img_3988_580b7cd5e8814412b28c66a063f30fe3.jpeg"
+                     class="img-fluid" />
+            </div>
+            <div class="col-md-4 px-1 banner_item">
+                <img alt=""
+                     src="https://file.hstatic.net/200000280689/file/img_3748_a989988ac9bd419a9ebbaf4ab6a2fd26.jpeg"
+                     class="img-fluid" />
+            </div>
+            <div class="col-md-4 px-1 banner_item">
+                <img alt=""
+                     src="https://file.hstatic.net/200000280689/file/img_2582_025e7302be154b05997b6f0a2ef6715d.jpeg"
+                     class="img-fluid" />
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="">
+        <p class="fs-1 text-uppercase text-center mt-5 mb-3 font_title">
+            New Arrivals
+        </p>
+        <div class="container p-0">
+            <ul class="row row-cols-3 p-0">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="card m-2 border-0" style="width: 18rem;">
+                                <img src=@Url.Content(item.ImageProduct.FirstOrDefault().URLImage) class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">@item.nameProduct</h5>
+                                    <p class="card-text">@item.price,000đ</p>
+                                    <a href="/Products/Details/@item.idProduct" class="stretched-link"></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+            </ul>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="container-fluid mb-5">
+        <p class="fs-1 text-uppercase text-center mt-5 mb-3 font_title">dynamic style</p>
+        <div class="row">
+            <div class="col-md-4 px-1 banner_item">
+                <img alt="" src="https://file.hstatic.net/200000280689/file/img_2593_7ca0a1527dc94da1bfe446cda9f4fda4.jpg" class="img-fluid" />
+            </div>
+            <div class="col-md-4 px-1 banner_item">
+                <img alt="" src="https://file.hstatic.net/200000280689/file/z2444515179107_f42dbb1907e4c68f9e18c48737f319f7_c9a22a72c1b34f21ab1beab727909bf6.jpeg" class="img-fluid" />
+            </div>
+            <div class="col-md-4 px-1 banner_item">
+                <img alt="" src="https://file.hstatic.net/200000280689/file/img_1286_4f874b0cfacd42a5abf8f746c1cf90b6.jpeg" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <ul class="row row-cols-2 p-0">
+            <li class="col p-0">
+                <a href="/Products?idCollection=C01" class="box_collection">
+                    <img src="https://file.hstatic.net/200000280689/file/w1_c237390c0216408a9f9511bb569e9826.jpg" alt="" class="image_collection img-fluid" />
+                    <div class="title_collection">
+                        <p class="fs-2 fw-bold text-uppercase text-decoration-none text-dark font_title">top</p>
+                    </div>
+                </a>
+            </li>
+            <li class="col p-0">
+                <a href="/Products?idCollection=C03" class="box_collection">
+                    <img src="https://file.hstatic.net/200000280689/file/w3_8b8f52d88bc9448c8c29e8dfbe378166.jpg" alt="" class="image_collection img-fluid" />
+                    <div class="title_collection">
+                        <p class="fs-2 fw-bold text-uppercase text-decoration-none text-dark font_title">outerwears</p>
+                    </div>
+                </a>
+            </li>
+            <li class="col p-0">
+                <a href="/Products?idCollection=C04" class="box_collection">
+                    <img src="https://file.hstatic.net/200000280689/file/w2_ac05ac28a33f4e4d97c5448a065e0ba3.jpg" alt="" class="image_collection img-fluid" />
+                    <div class="title_collection">
+                        <p class="fs-2 fw-bold text-uppercase text-decoration-none text-dark font_title">accessories</p>
+                    </div>
+                </a>
+            </li>
+            <li class="col p-0">
+                <a href="/Products?idCollection=C02" class="box_collection">
+                    <img src="https://file.hstatic.net/200000280689/file/w4_ce7a4cc405f34069ac1f35d5fd84d340.jpg" alt="" class="image_collection img-fluid" />
+                    <div class="title_collection">
+                        <p class="fs-2 fw-bold text-uppercase text-decoration-none text-dark font_title">bottom</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
 </div>

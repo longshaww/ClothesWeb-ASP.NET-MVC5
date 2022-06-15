@@ -13,6 +13,7 @@ namespace ClothesWeb.Controllers
         // GET: Payment
         public ActionResult Index(String error)
         {
+            var userCookie = Request.Cookies["user"];
             Cart cart = Session["Cart"] as Cart;
             if (Session["Cart"] == null || cart.CartCount() < 1)
             {
@@ -21,6 +22,11 @@ namespace ClothesWeb.Controllers
             if(error != null)
             {
                 ViewBag.error = error;
+            }
+            if (userCookie != null)
+            {
+                var user = db.User.Where(s => s.username == userCookie.Value).FirstOrDefault();
+                ViewBag.user = user;
             }
             return View(cart);
         }

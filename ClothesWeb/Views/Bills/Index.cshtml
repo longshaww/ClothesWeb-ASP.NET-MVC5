@@ -95,12 +95,11 @@
                 @foreach (var bill in item.DetailBIll)
                 {
                 <a href="/products/details/@bill.Product.idProduct">
-                    <img src="@bill.Product.ImageProduct.FirstOrDefault().URLImage" class="w-25 h-25" />
+                    <img src="@Url.Content(bill.Product.ImageProduct.FirstOrDefault().URLImage)" class="w-25 h-25" />
                 </a>
                 }
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.idBill }) |
                 @Html.ActionLink("Details", "Details", new { id = item.idBill }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.idBill })
             </td>

@@ -18,7 +18,7 @@ namespace ClothesWeb.Controllers
         private clothesEntities db = new clothesEntities();
 
         // GET: Products
-        public ActionResult Index(String nameProduct, String idCollection)
+        public ActionResult Index(String nameProduct, String idCollection,String isNew)
         {
             if (nameProduct != null)
             {
@@ -27,6 +27,10 @@ namespace ClothesWeb.Controllers
             if (idCollection != null)
             {
                 return View(db.Product.Where(s => s.idCollection.Equals(idCollection)).Include(s => s.ImageProduct).ToList());
+            }
+            if(isNew != null && isNew == "true")
+            {
+                return View(db.Product.Where(s => s.isNew).Include(s => s.ImageProduct).ToList());
             }
             var products = db.Product.Include(p => p.ImageProduct);
             return View(products.ToList());
@@ -77,6 +81,7 @@ namespace ClothesWeb.Controllers
                         imgProd.URLImage = "~/Content/images/" + file.FileName;
                         db.ImageProduct.Add(imgProd);
                     }
+                    product.isNew = true;
                     db.Product.Add(product);
                     db.SaveChanges();
                     return RedirectToAction("Index");

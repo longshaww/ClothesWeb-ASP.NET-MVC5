@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -61,12 +63,22 @@ namespace ClothesWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idUser,idPermission,username,password,gender,identityCard,address,email,URLAvatar,phone")] User user)
+        public ActionResult Create([Bind(Include = "idUser,idPermission,username,password,gender,identityCard,address,email,phone,name")] User user, HttpPostedFileBase avatar)
         {
-            if (user.idPermission == null)
+            try
             {
-                user.idPermission = "P2";
-            }
+                if (avatar != null)
+                {
+                    var InputFileName = Path.GetFileName(avatar.FileName);
+                    var ServerSavePath = Path.Combine(Server.MapPath("~/Content/images/") + InputFileName);
+                    avatar.SaveAs(ServerSavePath);
+                    user.URLAvatar = "~/Content/images/" + avatar.FileName;
+                }
+
+                if (user.idPermission == null)
+                {
+                    user.idPermission = "P2";
+                }
             if (ModelState.IsValid)
             {
                 db.User.Add(user);
@@ -75,7 +87,16 @@ namespace ClothesWeb.Controllers
             }
 
             ViewBag.idPermission = new SelectList(db.Permission, "idPermission", "namePermission", user.idPermission);
-            return View(user);
+                if (Request.Cookies["admin"] != null)
+                {
+                    return View(user);
+                }
+                return Redirect("/login");
+            }
+            catch(Exception ex)
+            {
+                return Content(ex.ToString());
+            }
         }
 
         // GET: Users/Edit/5
@@ -99,8 +120,22 @@ namespace ClothesWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idUser,idPermission,username,password,gender,identityCard,address,email,URLAvatar,phone")] User user)
+        public ActionResult Edit([Bind(Include = "idUser,idPermission,username,password,gender,identityCard,address,email,URLAvatar,phone,name")] User user, HttpPostedFileBase avatar)
         {
+            try
+            {
+
+            if (avatar != null)
+            {
+                var InputFileName = Path.GetFileName(avatar.FileName);
+                var ServerSavePath = Path.Combine(Server.MapPath("~/Content/images/") + InputFileName);
+                avatar.SaveAs(ServerSavePath);
+                user.URLAvatar = "~/Content/images/" + avatar.FileName;
+            }
+            if (user.idPermission == null)
+            {
+                user.idPermission = "P2";
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(user).State = EntityState.Modified;
@@ -108,7 +143,16 @@ namespace ClothesWeb.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.idPermission = new SelectList(db.Permission, "idPermission", "namePermission", user.idPermission);
-            return View(user);
+                if (Request.Cookies["admin"] != null)
+                {
+                    return View(user);
+                }
+                return Redirect("/login");
+            
+            }catch(Exception ex)
+            {
+                return Content(ex.ToString());
+            }
         }
 
         // GET: Users/Delete/5

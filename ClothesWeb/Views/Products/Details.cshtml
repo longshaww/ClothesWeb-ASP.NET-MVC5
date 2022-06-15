@@ -1,4 +1,5 @@
 ﻿@model ClothesWeb.Models.Product
+@using System.Globalization;
 
 @{
     ViewBag.Title = "Details";
@@ -39,9 +40,6 @@
                 <button class="btn btn-dark btn-cart d-block mb-3" onclick="window.location.href='/Cart/AddtoCart/@Model.idProduct'" type="submit" form="sizeForm">
                     Thêm vào giỏ hàng
                 </button>
-                <button class="btn btn-dark btn-cart d-block mb-3" onclick="window.location.href='/Payment'">
-                    Thanh toán
-                </button>
             </div>
             <div class="product-description">
                 <p class="fs-6 fw-bold text-decoration-underline pb-3 border-bottom">
@@ -55,11 +53,6 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <h4 class=" pb-3 border-bottom text-center">
-        SẢN PHẨM LIÊN QUAN
-    </h4>
-</div>
 
 @if (Request.Cookies["Admin"] != null)
 {
@@ -69,16 +62,12 @@
             <span class="featuredTitle">Doanh thu sản phẩm trong tháng</span>
             <div class="featuredMoneyContainer">
                 <span class="featuredMoney">
+                    @Model.DetailBIll.Sum(s => s.ProductTotal).ToString("N", new CultureInfo("vn-VN")) 
                 </span>
             </div>
             <span class="featuredSub">Compared to last month</span>
         </div>
     </div>
-    <div class="my-5 text-center">
-        <h3 class="mb-3">Thống kê doanh thu sản phẩm</h3>
-        <canvas id="productChart"></canvas>
-    </div>
-
     <div class="my-5 text-center">
         <h3 class="mb-3">Những người đã mua sản phẩm này</h3>
         <div class="table-responsive">
@@ -88,6 +77,7 @@
                         <th>Tên khách hàng</th>
                         <th>Số lượng</th>
                         <th>Tổng tiền trên sản phẩm</th>
+                        <th>Ngày</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -99,6 +89,7 @@
                             </td>
                             <td>@item.qty</td>
                             <td>@item.ProductTotal</td>
+                            <td>@item.Bill.createdAt</td>
                         </tr>
                     }
                 </tbody>
@@ -110,16 +101,15 @@
 <p>
     @if (Request.Cookies["Admin"] != null)
     {
-<span>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idProduct }) |
-    @Html.ActionLink("Delete", "Delete", new { id = Model.idProduct }) |
-</span>
+        <span>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.idProduct }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.idProduct }) |
+        </span>
     }
     @Html.ActionLink("Back to List", "Index")
 </p>
 
 
 @section scripts {
-    @Scripts.Render("~/Scripts/chart.product.js")
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
 }

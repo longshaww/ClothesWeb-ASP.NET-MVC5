@@ -36,12 +36,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Products?idCollection=C04">Accessories</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Products?isNew=true">New Arrivals</a>
+                    </li>
                 </ul>
                 <form class="d-flex ms-auto" action="/Products" method="GET">
                     <input class="form-control me-2" name="nameProduct" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <img src="@Url.Content("~/Content/Images/shopping_cart.png")">
+                <img src="@Url.Content("~/Content/Images/shopping_cart.png")" onclick="window.location.href='/Cart/ShowToCart'" style="cursor:pointer">
                 @Html.Action("BagCart", "Cart")
                 <form action="/login" method="get">
                     <input type="image" src="@Url.Content("~/Content/Images/account.png")">

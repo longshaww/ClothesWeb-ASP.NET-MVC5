@@ -8,8 +8,6 @@
 <h2>Details</h2>
 
 <div>
-    <h4>User</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.username)
@@ -64,7 +62,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.URLAvatar)
+            <img src="@Url.Content(Model.URLAvatar)" class="rounded-circle border border-dark" style="width:5rem;height:5rem" />
         </dd>
 
         <dt>

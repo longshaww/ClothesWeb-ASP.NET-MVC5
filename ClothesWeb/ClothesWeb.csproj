@@ -187,6 +187,7 @@
   <ItemGroup>
     <Content Include="Content\detail.bill.css" />
     <Content Include="Content\feature.info.css" />
+    <Content Include="Content\home.css" />
     <Content Include="Content\Images\account.png" />
     <Content Include="Content\Images\shopping_cart.png" />
     <Content Include="Content\sidebar.css" />
@@ -215,7 +216,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\chart.product.js" />
     <Content Include="Scripts\index.bill.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

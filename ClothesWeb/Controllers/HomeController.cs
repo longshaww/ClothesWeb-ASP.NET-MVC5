@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ClothesWeb.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,9 +10,11 @@ namespace ClothesWeb.Controllers
 {
     public class HomeController : Controller
     {
+        private clothesEntities db = new clothesEntities();
+
         public ActionResult Index()
         {
-            return RedirectToAction("Index","Products");
+            return View(db.Product.Where(s => s.isNew).Include(s => s.ImageProduct).ToList());
         }
 
         public ActionResult About()

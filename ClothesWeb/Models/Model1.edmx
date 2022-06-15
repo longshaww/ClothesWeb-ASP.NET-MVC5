@@ -91,6 +91,7 @@
           <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="URLAvatar" Type="text" />
           <Property Name="phone" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="Voucher">
           <Key>
@@ -327,6 +328,7 @@
           <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="URLAvatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__idUser__47DBAE45" FromRole="User" ToRole="Bill" />
           <NavigationProperty Name="Permission" Relationship="Self.FK__User__idPermissi__4D94879B" FromRole="User" ToRole="Permission" />
         </EntityType>
@@ -559,6 +561,7 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="URLAvatar" ColumnName="URLAvatar" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
