@@ -47,6 +47,7 @@ namespace ClothesWeb.Controllers
                 return (RedirectToAction("Index", new { error = "Vui lòng nhập đầy đủ thông tin" }));
             }
 
+            var userCookie = Request.Cookies["user"];
             Guid cusId = Guid.NewGuid();
             Customer customer = new Customer();
             customer.idCustomer = cusId.ToString();
@@ -66,6 +67,11 @@ namespace ClothesWeb.Controllers
             bill.Total = cart.TotalMoney();
             bill.TotalQty = cart.CartCount();
             bill.createdAt = DateTime.Now;
+            if(userCookie != null)
+            {
+                var user = db.User.Where(s => s.username.Equals(userCookie.Value)).FirstOrDefault();
+                bill.idUser = user.idUser;
+            }
             db.Bill.Add(bill);
 
             foreach(var item in cart.Items)
@@ -84,9 +90,9 @@ namespace ClothesWeb.Controllers
             cart.ClearCart();
                 return RedirectToAction("SuccessPayment", "Payment");
             }
-            catch
+            catch (Exception ex)
             {
-                return Content("Error Checkout");
+                return Content(ex.ToString());
             }
         }
     }   

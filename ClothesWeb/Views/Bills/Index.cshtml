@@ -23,89 +23,92 @@
     <canvas id="myChart"></canvas>
 </div>
 
-<h3 class="my-3">Transactions</h3>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Shipping)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Total)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PTTT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.createdAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalQty)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DetailBIll.FirstOrDefault().Product.nameProduct)
-        </th>
-        <th>
-            Image
-        </th>
-        <th>
-            Actions
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="p-5 shadow">
+    <h4 class="my-3">Transactions</h4>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Shipping)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PTTT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.createdAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalQty)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.name)
-            </td>
-            <td>
-                <ul>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipping)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PTTT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetailBIll.FirstOrDefault().Product.nameProduct)
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                Actions
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Shipping)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total),000đ
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PTTT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.createdAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalQty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.name)
+                </td>
+                <td>
+                    <ul>
+                        @foreach (var bill in item.DetailBIll)
+                        {
+                            <li>@bill.Product.nameProduct</li>
+                        }
+                    </ul>
+                </td>
+                <td>
                     @foreach (var bill in item.DetailBIll)
                     {
-                        <li>@bill.Product.nameProduct</li>
+                        <a href="/products/details/@bill.Product.idProduct">
+                            <img src="@Url.Content(bill.Product.ImageProduct.FirstOrDefault().URLImage)" class="w-25 h-25" />
+                        </a>
                     }
-                </ul>
-            </td>
-            <td>
-                @foreach (var bill in item.DetailBIll)
-                {
-                <a href="/products/details/@bill.Product.idProduct">
-                    <img src="@Url.Content(bill.Product.ImageProduct.FirstOrDefault().URLImage)" class="w-25 h-25" />
-                </a>
-                }
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.idBill }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.idBill })
-            </td>
-        </tr>
-    }
-</table>
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.idBill }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idBill })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
 
 
 @section scripts {

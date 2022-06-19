@@ -23,9 +23,11 @@ namespace ClothesWeb.Controllers
             var userCookie = Request.Cookies["user"];
             if (adminCookie == null && userCookie !=null) {
                 var user = db.User.Where(s => s.username == userCookie.Value).FirstOrDefault();
+                var bills = db.Bill.Where(s => s.idUser.Equals(user.idUser)).Include(s=>s.DetailBIll).ToList();
+                ViewBag.bills = bills;
                 ViewBag.user = user;
             }
-            if(adminCookie != null && userCookie != null)
+            if (adminCookie != null && userCookie != null)
             {
                 var userAdmin = db.User.Where(s => s.username == adminCookie.Value).FirstOrDefault();
                 ViewBag.user = userAdmin;

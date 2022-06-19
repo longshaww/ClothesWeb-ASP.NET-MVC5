@@ -5,83 +5,66 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.username)
-        </dt>
+<div class="text-center p-5 my-5 shadow">
+    <div class="mb-3">
+        <img src="@Url.Content(Model.URLAvatar)" class="rounded-circle border border-dark" style="width:12.5rem;height:12.5rem" />
+    </div>
+    <div class="row mt-5">
+        <div class="col-4">
+            <ul class="list-group col fw-bold">
+                <li class="list-group-item list-group-item-danger ">
+                    Tên
+                </li>
+                <li class="list-group-item">
+                    Giới tính
+                </li>
+                <li class="list-group-item">
+                    CMND
+                </li>
+                <li class="list-group-item">
+                    Địa chỉ
+                </li>
+                <li class="list-group-item">
+                    Email
+                </li>
+                <li class="list-group-item">
+                    SĐT
+                </li>
+            </ul>
 
-        <dd>
-            @Html.DisplayFor(model => model.username)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.gender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.gender)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.identityCard)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.identityCard)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.URLAvatar)
-        </dt>
-
-        <dd>
-            <img src="@Url.Content(Model.URLAvatar)" class="rounded-circle border border-dark" style="width:5rem;height:5rem" />
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.phone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.phone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Permission.namePermission)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Permission.namePermission)
-        </dd>
-
-    </dl>
+        </div>
+        <ul class="list-group col">
+            <li class="list-group-item list-group-item-danger ">
+                @Model.username
+            </li>
+            @if (Model.gender)
+            {
+                <li class="list-group-item">
+                    Nam
+                </li>
+            }
+            else
+            {
+                <li class="list-group-item">
+                    Nữ
+                </li>
+            }
+            <li class="list-group-item">
+                @Model.identityCard
+            </li>
+            <li class="list-group-item">
+                @Model.address
+            </li>
+            <li class="list-group-item">
+                @Model.email
+            </li>
+            <li class="list-group-item">
+                @Model.phone
+            </li>
+        </ul>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.idUser }) |

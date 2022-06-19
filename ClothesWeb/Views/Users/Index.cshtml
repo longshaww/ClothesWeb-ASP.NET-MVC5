@@ -4,16 +4,18 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{ var user = ViewBag.user;}
+@{ var user = ViewBag.user;
+    var bills = ViewBag.bills;
+}
 
 @if (user != null)
 {
-    <div class="text-center mt-5">
+    <div class="text-center mt-5 p-5 shadow">
         <div class="mb-3">
             <img src="@Url.Content(user.URLAvatar)" class="rounded-circle border border-dark" style="width:12.5rem;height:12.5rem" />
         </div>
         <button class="btn btn-dark" onclick="window.location.href='/Users/Edit/@user.idUser'">Edit</button>
-            <button class="btn btn-dark" onclick="window.location.href='/Login/Signout'">Logout</button>
+        <button class="btn btn-dark" onclick="window.location.href='/Login/Signout'">Logout</button>
         <div class="row mt-5">
             <div class="col-4">
                 <ul class="list-group col fw-bold">
@@ -72,13 +74,54 @@
     </div>
 }
 
+@if (bills != null)
+{
+    <div class="p-5 mt-3 shadow">
+        <h4>Lịch sử đơn hàng</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>
+                        Ngày
+                    </th>
+                    <th>
+                        Tổng số lượng
+                    </th>
+                    <th>Shipping</th>
+                    <th>
+                        Total
+                    </th>
+                </tr>
+
+                @foreach (var item in bills)
+                {
+                    <tr>
+                        <td>
+                            @item.createdAt
+                        </td>
+                        <td>
+                            @item.TotalQty
+                        </td>
+                        <td>
+                            @item.Shipping
+                        </td>
+                        <td>
+                            @item.Total,000đ
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+
+}
 
 @if (Request.Cookies["admin"] != null)
-{
+{   
+    <div class="p-5 shadow mt-3">
     <h2>Users</h2>
-    <p>
-        <button class="btn btn-primary" onclick="window.location.href='/Users/Create'">Create new</button>
-    </p>
+    <button class="btn btn-primary" onclick="window.location.href='/Users/Create'">Create new</button>
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -134,7 +177,7 @@
                         @Html.DisplayFor(modelItem => item.email)
                     </td>
                     <td>
-                        <img src="@Url.Content(item.URLAvatar)" class="w-25 h-25 rounded-circle border border-dark"/>
+                        <img src="@Url.Content(item.URLAvatar)" class="w-25 h-25 rounded-circle border border-dark" />
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.phone)
@@ -152,4 +195,5 @@
 
         </table>
     </div>
+        </div>
 }

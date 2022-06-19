@@ -46,11 +46,12 @@
                 </form>
                 <img src="@Url.Content("~/Content/Images/shopping_cart.png")" onclick="window.location.href='/Cart/ShowToCart'" style="cursor:pointer">
                 @Html.Action("BagCart", "Cart")
-                <form action="/login" method="get">
-                    <input type="image" src="@Url.Content("~/Content/Images/account.png")">
-                </form>
-
-
+                <a href="/login" class="d-flex text-decoration-none">
+                    <img src="@Url.Content("~/Content/Images/account.png")"/>
+                    @if(Request.Cookies["user"] != null) {
+                    <div href="/login" class="text-decoration-none mt-1">@Request.Cookies["user"].Value</div>
+                    }
+                </a>
             </div>
         </div>
     </nav>
